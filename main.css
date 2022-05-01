@@ -494,17 +494,17 @@
 
 /*---------------------------------MEDIA QUERY ---------------------------------------*/
 
-/*Cambio iconos social media */
-@media screen and (min-width: 400px){  
-    .social-media {
-        justify-content: space-around;
-        font-size: 8vw;
-    }
+    /*Cambio iconos social media */
+    @media screen and (min-width: 400px){  
+        .social-media {
+            justify-content: space-around;
+            font-size: 8vw;
+        }
 
-    .nft {
-        filter: invert(1);
+        .nft {
+            filter: invert(1);
+        }
     }
-}
 
   /*------------------------------------------TABLET------------------------------------------------*/
     @media screen and (min-width: 728px){ 
@@ -553,7 +553,7 @@
        
         }
         .main_home{
-            margin-top: 5%;
+            margin-top: 4%;
             height: 100vh;
             width: 100vw;
        
@@ -607,7 +607,7 @@
        }
     
 
-/*--------------------------------------------------------DESKTOP------------------------------------------------------*/
+        /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
      @media screen and (min-width: 1024px)
     { 
         .icon-insta{
@@ -635,8 +635,8 @@
 
         
         .main_home{
-            margin-top: 2%;
-            margin-bottom: 2%;
+            margin-top: 1%;
+            margin-bottom: 1%;
             height: 100vh;
             max-width: 100%;
        
@@ -727,48 +727,45 @@
        /*---------PORTFOLIO------------*/
 
        .Portfolio{
-        display: grid;
-        grid-template-columns:  1fr 1fr;
-        grid-gap: 2% ;
-        margin-bottom: 10%;
+            display: grid;
+            grid-template-columns:  1fr 1fr;
+            grid-gap: 2% ;
+            margin-bottom: 10%;
+        }
 
-    }
+        .Portfolio img{
+            margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
-    .Portfolio img{
-        margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
- 
-    }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            max-width: 40vw;
+            max-height: 60vh;
+    
+        }
 
 
     /*------------SHOP-------------*/
 
-    .prints {
-  
-        grid-template-columns:  1fr 1fr;
-        grid-gap: 0% ;
-        margin-bottom: 10%;
-        margin-top: 5%;
+        .prints {
+    
+            grid-template-columns:  1fr 1fr;
+            grid-gap: 0% ;
+            margin-bottom: 10%;
+            margin-top: 5%;
+        }
+
+        .prints img{
+
+            justify-content: space-around;
+            align-content: center;
+            max-width: 40vw;
+            max-height: 60vh;
+    
+        }
     }
 
-    .prints img{
-
-        justify-content: space-around;
-        align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
- 
-    }
-
-
-
-    }
       
        
     
