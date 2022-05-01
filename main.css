@@ -506,7 +506,7 @@
     }
 }
 
-                                                        /*TABLET */
+  /*------------------------------------------TABLET------------------------------------------------*/
     @media screen and (min-width: 728px){ 
         header h1{
    
@@ -546,14 +546,14 @@
         }
         
         #background_home {
+            min-width: 100%;
+            min-height: 100%;
 
-            max-width: 100%;
-            max-height: 100%;
             height:none;
        
         }
         .main_home{
-            margin-top: 0;
+            margin-top: 5%;
             height: 100vh;
             width: 100vw;
        
@@ -633,14 +633,10 @@
             flex-wrap: none;
         }
 
-        #background_home {
-
-        max-width: 100%;
-        max-height: 100%;
-        }
         
         .main_home{
-            margin-top: 0;
+            margin-top: 2%;
+            margin-bottom: 2%;
             height: 100vh;
             max-width: 100%;
        
