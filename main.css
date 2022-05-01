@@ -11,7 +11,7 @@
         cursor: pointer;
         background-color: #ffffff17;
         transition-duration:1s ;
-        border-radius: 19%;
+        border-radius: 20%;
     }
 
     /*--------------------HOME-----------------------*/
@@ -27,7 +27,7 @@
         top: 0; 
         left: 0; 
         /* Preserve aspet ratio */
-        max-width:100vh ;
+        max-width:fit-content ;
         height: 100%;
         z-index: -100;
         cursor: none;
@@ -494,19 +494,19 @@
 
 /*---------------------------------MEDIA QUERY ---------------------------------------*/
 
-/*Cambio iconos social media */
-@media screen and (min-width: 400px){  
-    .social-media {
-        justify-content: space-around;
-        font-size: 8vw;
+    /*Cambio iconos social media */
+    @media screen and (min-width: 400px){  
+        .social-media {
+            justify-content: space-around;
+            font-size: 8vw;
+        }
+
+        .nft {
+            filter: invert(1);
+        }
     }
 
-    .nft {
-        filter: invert(1);
-    }
-}
-
-                                                        /*TABLET */
+  /*------------------------------------------TABLET------------------------------------------------*/
     @media screen and (min-width: 728px){ 
         header h1{
    
@@ -546,17 +546,23 @@
         }
         
         #background_home {
-
-            max-width:none;
-            height:none;
             min-width: 100%;
             min-height: 100%;
+
+            height:none;
+       
         }
         .main_home{
-            margin-top: 0;
+            margin-top: 4%;
             height: 100vh;
             width: 100vw;
        
+        }
+        .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 90%;
+         
         }
 
         .social-media {
@@ -601,7 +607,7 @@
        }
     
 
-                                                 /*DESKTOP*/
+        /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
      @media screen and (min-width: 1024px)
     { 
         .icon-insta{
@@ -619,30 +625,29 @@
             flex-wrap: wrap;
     
         } 
+        
  
         body{
             display: flex;
             flex-direction: none;
             flex-wrap: none;
         }
-
-        #background_home {
-
-            max-width:none;
-            height:none;
-            min-width: 100%;
-            min-height: 100%;
-        }
         
         .main_home{
-            margin-top: 0;
+            margin-top: 1%;
+            margin-bottom: 1%;
             height: 100vh;
-            width: 100vw;
+            width: none;
+            max-width: 100%;
+    
        
         }
+    
+
         
         .social-media {
-            margin-top: 10vh;
+            
+            margin-top: 8vh;
             font-size: 3vw;
         }
         
@@ -725,48 +730,71 @@
        /*---------PORTFOLIO------------*/
 
        .Portfolio{
-        display: grid;
-        grid-template-columns:  1fr 1fr;
-        grid-gap: 2% ;
-        margin-bottom: 10%;
+            display: grid;
+            grid-template-columns:  1fr 1fr;
+            grid-gap: 2% ;
+            margin-bottom: 10%;
+        }
 
-    }
+        .Portfolio img{
+            margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
-    .Portfolio img{
-        margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
- 
-    }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            max-width: 40vw;
+            max-height: 60vh;
+    
+        }
 
 
     /*------------SHOP-------------*/
 
-    .prints {
-  
-        grid-template-columns:  1fr 1fr;
-        grid-gap: 0% ;
-        margin-bottom: 10%;
-        margin-top: 5%;
+
+        .prints {
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 90%;
+            grid-template-columns:  1fr 1fr;
+            grid-gap: 0% ;
+    
+        }
+
+        .prints img{
+
+            justify-content: space-around;
+            align-content: center;
+            max-width: 40vw;
+            max-height: 60vh;
+    
+        }
+
+
+
+
+        /*---------------------ABOUT-----------------------*/
+            .main-about{
+            margin-top: 5vh; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+            margin-bottom: 0;    
+            padding: 10vh 10vw;
+            height: 60vh;
+            max-width: 60%;
+    
+            text-align: center;
+            background-color: #ffffff52;
+    
+    
+    
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            justify-content: space-evenly;
+    
+        }
     }
 
-    .prints img{
-
-        justify-content: space-around;
-        align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
- 
-    }
-
-
-
-    }
       
        
     
