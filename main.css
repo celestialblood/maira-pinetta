@@ -27,7 +27,7 @@
         top: 0; 
         left: 0; 
         /* Preserve aspet ratio */
-        max-width:100vh ;
+        max-width:fit-content ;
         height: 100%;
         z-index: -100;
         cursor: none;
@@ -547,16 +547,22 @@
         
         #background_home {
 
-            max-width:none;
+            max-width: 100%;
+            max-height: 100%;
             height:none;
-            min-width: 100%;
-            min-height: 100%;
+       
         }
         .main_home{
             margin-top: 0;
             height: 100vh;
             width: 100vw;
        
+        }
+        .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 90%;
+         
         }
 
         .social-media {
@@ -601,7 +607,7 @@
        }
     
 
-                                                 /*DESKTOP*/
+/*--------------------------------------------------------DESKTOP------------------------------------------------------*/
      @media screen and (min-width: 1024px)
     { 
         .icon-insta{
@@ -619,6 +625,7 @@
             flex-wrap: wrap;
     
         } 
+        
  
         body{
             display: flex;
@@ -628,18 +635,17 @@
 
         #background_home {
 
-            max-width:none;
-            height:none;
-            min-width: 100%;
-            min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
         }
         
         .main_home{
             margin-top: 0;
             height: 100vh;
-            width: 100vw;
+            max-width: 100%;
        
         }
+    
         
         .social-media {
             margin-top: 10vh;
