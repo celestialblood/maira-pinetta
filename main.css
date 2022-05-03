@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap');
 
 /*imagenes botones */
+    /*---------TRANSICION----------*/
+
 .main_home div img:hover {
     cursor: pointer;
     background-color: #ffffff17;
@@ -32,6 +34,7 @@ flex-wrap: wrap;}
     z-index: -100;
     cursor: none;
 }
+
 
 .main_home{
     margin-top: 20vh;
@@ -66,8 +69,24 @@ flex-wrap: wrap;}
     justify-self:center;
 }
 
- /*TEXTO CENTRADO*/
 
+/*------------ANIMACIÓN TITULO ---------*/
+@keyframes updownfadein { /*Moviemiento arriba abajo con fade in*/
+    0% {
+      transform: translateY(-70px);
+      opacity: 0;
+    }
+    30% {
+      transform: translateY(50px);
+      opacity: .4;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+ /*TEXTO CENTRADO*/
  .nombre_home{
     display: flex;
     align-items: center;
@@ -75,6 +94,8 @@ flex-wrap: wrap;}
     /* background-color: #de90ff; */
     text-align: center;
     font-size:x-large;
+    animation: updownfadein 4s ;
+
 }
 
 h1{     
@@ -99,6 +120,8 @@ h1{
 
 
 /*----------------NAV_BAR----------------*/
+
+/*---------TRANSICION----------*/
 
 nav:hover{
     background-color: #ffffff17;
@@ -349,6 +372,7 @@ textarea, input{
     background-color: transparent;
 }
 
+    /*---------TRANSICION----------*/
 .button-contact:hover{
     background-color: #de90ffe4;
     transition: 0.7s;
