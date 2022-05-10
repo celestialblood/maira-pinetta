@@ -14,7 +14,8 @@
 body{
 display: flex;
 flex-direction: column;
-flex-wrap: wrap;}
+flex-wrap: wrap;
+overflow-x: hidden;}
 
 #background_home {
     position:fixed;       
@@ -45,7 +46,6 @@ flex-wrap: wrap;}
     display: grid;
     height: 100vh;
     grid-template-columns: 2fr 2fr 2fr; /*o  repeat(3, 2fr)*/
-    
 }
 
 .portfolio{
@@ -244,7 +244,6 @@ footer:hover{
 
 
 } */
-
 .carousel-inner img{
     margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
@@ -259,14 +258,18 @@ footer:hover{
 }
 
 
+
+
 /*-------------SHOP--------------*/
+
+
 
 
 table{
     margin: 5vh auto ;
     padding: 10vh 10vw;
     height: 30vh;
-    width: 30vw;
+    width: 80vw;
 
     text-align: center;
     font-family: 'Dosis', sans-serif;
@@ -290,28 +293,10 @@ td {
     padding: 2vh;
 }
 
-
-.prints {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-gap: 3%;
-
-    z-index: auto;
+.prints{
+    display: none;
 }
 
-.prints img{
-    margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    max-width: 100vw;
-    max-height: 80vh;
-
-}
 
 
 
@@ -494,7 +479,7 @@ color: rgb(255, 255, 255);
 
 /*------------ABOUT-------------*/
 
-.main-about{
+.card{
     margin: 5vh auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
     padding: 10vh 10vw;
     height: fit-content;
@@ -510,6 +495,7 @@ color: rgb(255, 255, 255);
     align-items: center;
 
 }
+
 
 p{
     font: 300 18px 'Dosis', sans-serif;
@@ -538,6 +524,9 @@ h2{
     .nft {
         filter: invert(1);
     }
+
+    
+
 }
 
 /*------------------------------------------TABLET------------------------------------------------*/
@@ -627,7 +616,7 @@ h2{
 
     /*-----------ABOUT ---------*/
 
-    .main-about{
+    .card{
         margin: 5vh auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
         padding: 10vh 10vw;
         height: 60vh;
@@ -637,7 +626,6 @@ h2{
         background-color: #ffffff52;
 
 
-
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -645,6 +633,12 @@ h2{
         justify-content: space-evenly;
 
     }
+
+    /*------------SHOP-----------*/
+    table{
+        width: 50vw;
+    }
+
 
    }
 
@@ -790,21 +784,38 @@ h2{
 
 /*------------SHOP-------------*/
 
+.carousel-shop{
+    display:none;
+}
     .prints {
+        display: contents;
+        margin: 0 auto;
+        display: grid;
 
         grid-template-columns:  1fr 1fr;
-        grid-gap: 0% ;
+        grid-gap: 3%;
         margin-bottom: 10%;
         margin-top: 5%;
+        z-index: auto;
     }
-
+    
     .prints img{
-
-        justify-content: space-around;
+        margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+    
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
 
+        max-width: 100vw;
+        max-height: 80vh;
+    
+    }
+    
+
+    table{
+        width: 30vw;
     }
 }
 
