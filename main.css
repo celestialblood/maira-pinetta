@@ -44,11 +44,8 @@ flex-wrap: wrap;}
 .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
     display: grid;
     height: 100vh;
-    width: 100vw;
     grid-template-columns: 2fr 2fr 2fr; /*o  repeat(3, 2fr)*/
-
-    display: flex;
-    align-content: center;
+    
 }
 
 .portfolio{
@@ -544,7 +541,7 @@ h2{
 }
 
 /*------------------------------------------TABLET------------------------------------------------*/
-@media screen and (min-width: 728px){ 
+@media screen and (min-width: 700px){ 
     header h1{
 
         padding-bottom: 0;
@@ -602,9 +599,7 @@ h2{
     .container-fluid {
         display:contents;
         } 
-        
-
-   
+          
 
      /*imagenes botones */
     #about{
