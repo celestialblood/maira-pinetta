@@ -22,7 +22,8 @@
 body{
 display: flex;
 flex-direction: column;
-flex-wrap: wrap;}
+flex-wrap: wrap;
+overflow-x: hidden;}
 
 #background_home {
     position:fixed;       
@@ -119,9 +120,9 @@ h1{
 
 
 
-/*----------------NAV_BAR----------------*/
+/*------------------NAV_BAR------------------*/
 
-/*---------TRANSICION----------*/
+/*-------TRANSICION--------*/
 
 nav:hover{
     background-color: #ffffff17;
@@ -133,7 +134,15 @@ header h1{
     text-decoration: none;
     padding-bottom: 2vh;
     font-family: 'Dosis', sans-serif;
-    font-weight: 300;
+    font-weight: 200;
+    color: white;
+}
+header h2{ /*ERROR h1 EN PORTFOLIO SI no lo cambio a este se sigue viendo grande no se porque */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 0vh;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
     color: white;
 }
 
@@ -225,15 +234,16 @@ footer:hover{
 
 /*-------------PORTFOLIO--------------*/
 
-.Portfolio{
+/* .Portfolio{
     display: grid;
     grid-template-columns: 2fr;
     grid-gap: 3%;
 
 
-}
+} */
 
-.Portfolio img{
+
+.carousel-inner img{
     margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
     display: flex;
