@@ -6,15 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap');
 
-/*imagenes botones */
-    /*---------TRANSICION----------*/
 
-.main_home div img:hover {
-    cursor: pointer;
-    background-color: #ffffff17;
-    transition-duration:1s ;
-    border-radius: 20%;
-}
 
 /*--------------------HOME-----------------------*/
 
@@ -35,6 +27,10 @@ flex-wrap: wrap;}
     cursor: none;
 }
 
+/*diplay none  index con bootstrap */
+.container-fluid{
+    display: none;
+}
 
 .main_home{
     margin-top: 20vh;
@@ -42,12 +38,17 @@ flex-wrap: wrap;}
     width: fit-content;
 }
 
-.botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
 
+/*INDEX sin bootstrap para mobile*/
+
+.botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
     display: grid;
     height: 100vh;
+    width: 100vw;
     grid-template-columns: 2fr 2fr 2fr; /*o  repeat(3, 2fr)*/
-    /* background-color: aqua; */
+
+    display: flex;
+    align-content: center;
 }
 
 .portfolio{
@@ -70,6 +71,32 @@ flex-wrap: wrap;}
 }
 
 
+.contact{
+    /* background-color: #de90ff; */
+    justify-self: center;
+} 
+
+.shop{ 
+    /* background-color: #de90ff; */
+    align-self: center; 
+    justify-self: flex-end;
+
+}
+
+/*---------------------------------------------------*/
+
+
+/*---------TRANSICION----------*/
+
+.main_home div img:hover {
+    cursor: pointer;
+    background-color: #ffffff17;
+    transition-duration:1s ;
+    border-radius: 20%;
+}
+
+
+
 /*------------ANIMACIÓN TITULO ---------*/
 @keyframes updownfadein { /*Moviemiento arriba abajo con fade in*/
     0% {
@@ -86,8 +113,8 @@ flex-wrap: wrap;}
     }
   }
 
- /*TEXTO CENTRADO*/
- .nombre_home{
+   /*TEXTO CENTRADO*/
+  .nombre_home{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,24 +125,12 @@ flex-wrap: wrap;}
 
 }
 
-h1{     
+ h1{
+    font-size: 300;
+
     font-family: 'Dosis', sans-serif;
-    font-weight: 300;
     color: white;
 }
-
-.contact{
-    /* background-color: #de90ff; */
-    justify-self: center;
-} 
-
-.shop{ 
-    /* background-color: #de90ff; */
-    align-self: center; 
-    justify-self: flex-end;
-
-}
-
 
 
 
@@ -492,12 +507,10 @@ color: rgb(255, 255, 255);
     background-color: #ffffff52;
 
 
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-
 
 }
 
@@ -516,7 +529,7 @@ h2{
 }
 
 
-/*---------------------------------MEDIA QUERY ---------------------------------------*/
+/*--------------------------------------------MEDIA QUERY ---------------------------------------------------*/
 
 /*Cambio iconos social media */
 @media screen and (min-width: 400px){  
@@ -580,16 +593,26 @@ h2{
         margin-top: 4%;
         height: 100vh;
         width: 100vw;
-   
     }
-    .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
-        margin: 0 auto;
-        height: 100vh;
-        max-width: 90%;
      
+    .botones_home{ 
+        display: none;
     }
 
-    .social-media {
+    .container-fluid {
+        display:contents;
+        } 
+        
+
+   
+
+     /*imagenes botones */
+    #about{
+    margin-top: 20%;
+    }
+
+
+     .social-media {
 
         font-size: 5vw;
     }
@@ -676,7 +699,7 @@ h2{
     .nft {
         filter: invert(1);
 
-    }
+    } 
 
  /*---------CONTACT --------------*/
      
@@ -750,7 +773,7 @@ h2{
 
    /*---------PORTFOLIO------------*/
 
-   .Portfolio{
+   /* .Portfolio{
         display: grid;
         grid-template-columns:  1fr 1fr;
         grid-gap: 2% ;
@@ -760,14 +783,14 @@ h2{
     .Portfolio img{
         margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
-        display: flex;
+        /* display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         align-content: center;
         max-width: 40vw;
         max-height: 60vh;
 
-    }
+    } */
 
 
 /*------------SHOP-------------*/
