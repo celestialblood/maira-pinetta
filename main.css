@@ -279,7 +279,6 @@ table{
 
     background-color: #ffffff52;
     border-collapse: collapse;
-    
 }
 
 th {
@@ -489,7 +488,6 @@ color: rgb(255, 255, 255);
     text-align: center;
     background-color: #ffffff52;
 
-
 }
 
 
@@ -636,7 +634,7 @@ h2{
     }
 
 
-   }
+   } /*FIN TABLET*/
 
 
     /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
@@ -780,9 +778,9 @@ h2{
 
 /*------------SHOP-------------*/
 
-.carousel-shop{
-    display:none;
-}
+    .carousel-shop{
+        display:none;
+    }
     .prints {
         display: contents;
         margin: 0 auto;
