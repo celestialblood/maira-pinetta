@@ -225,15 +225,15 @@ footer:hover{
 
 /*-------------PORTFOLIO--------------*/
 
-.Portfolio{
+/* .Portfolio{
     display: grid;
     grid-template-columns: 2fr;
     grid-gap: 3%;
 
 
-}
+} */
 
-.Portfolio img{
+.carousel-inner img{
     margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
     display: flex;
