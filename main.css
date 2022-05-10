@@ -118,15 +118,12 @@ overflow-x: hidden;}
     /* background-color: #de90ff; */
     text-align: center;
     font-size:x-large;
+    font-family: 'Dosis', sans-serif;
+    color: white; 
+
+
     animation: updownfadein 4s ;
 
-}
-
- h1{
-    font-size: 300;
-
-    font-family: 'Dosis', sans-serif;
-    color: white;
 }
 
 
@@ -144,13 +141,15 @@ header h1{
     text-transform: uppercase;
     text-decoration: none;
     padding-bottom: 2vh;
+    padding-top: 2vh;
     font-family: 'Dosis', sans-serif;
     font-weight: 300;
-    color: white;
+    color: white; 
+    font-size:x-large;
 }
 
 nav{
-    padding: 2.5%;
+    padding: 1vw;
     display: flex;
     flex-wrap: wrap; 
     flex-direction: column;
@@ -258,7 +257,9 @@ footer:hover{
 }
 
 
-
+.carousel-portfolio{
+    margin-top: 3vh;
+}
 
 /*-------------SHOP--------------*/
 
@@ -483,16 +484,11 @@ color: rgb(255, 255, 255);
     margin: 5vh auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
     padding: 10vh 10vw;
     height: fit-content;
-    width: fit-content  ;
+    width:fit-content ;
 
     text-align: center;
     background-color: #ffffff52;
 
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
 
 }
 
@@ -585,8 +581,8 @@ h2{
         display: none;
     }
 
-    .container-fluid {
-        display:contents;
+    .container-fluid
+     { display:contents;
         } 
           
 
