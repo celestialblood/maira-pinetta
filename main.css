@@ -6,15 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap');
 
-/*imagenes botones */
-    /*---------TRANSICION----------*/
 
-.main_home div img:hover {
-    cursor: pointer;
-    background-color: #ffffff17;
-    transition-duration:1s ;
-    border-radius: 20%;
-}
 
 /*--------------------HOME-----------------------*/
 
@@ -36,6 +28,10 @@ overflow-x: hidden;}
     cursor: none;
 }
 
+/*diplay none  index con bootstrap */
+.container-fluid{
+    display: none;
+}
 
 .main_home{
     margin-top: 20vh;
@@ -43,12 +39,13 @@ overflow-x: hidden;}
     width: fit-content;
 }
 
-.botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
 
+/*INDEX sin bootstrap para mobile*/
+
+.botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
     display: grid;
     height: 100vh;
     grid-template-columns: 2fr 2fr 2fr; /*o  repeat(3, 2fr)*/
-    /* background-color: aqua; */
 }
 
 .portfolio{
@@ -71,6 +68,32 @@ overflow-x: hidden;}
 }
 
 
+.contact{
+    /* background-color: #de90ff; */
+    justify-self: center;
+} 
+
+.shop{ 
+    /* background-color: #de90ff; */
+    align-self: center; 
+    justify-self: flex-end;
+
+}
+
+/*---------------------------------------------------*/
+
+
+/*---------TRANSICION----------*/
+
+.main_home div img:hover {
+    cursor: pointer;
+    background-color: #ffffff17;
+    transition-duration:1s ;
+    border-radius: 20%;
+}
+
+
+
 /*------------ANIMACIÓN TITULO ---------*/
 @keyframes updownfadein { /*Moviemiento arriba abajo con fade in*/
     0% {
@@ -87,36 +110,21 @@ overflow-x: hidden;}
     }
   }
 
- /*TEXTO CENTRADO*/
- .nombre_home{
+   /*TEXTO CENTRADO*/
+  .nombre_home{
     display: flex;
     align-items: center;
     justify-content: center;
     /* background-color: #de90ff; */
     text-align: center;
     font-size:x-large;
+    font-family: 'Dosis', sans-serif;
+    color: white; 
+
+
     animation: updownfadein 4s ;
 
 }
-
-h1{     
-    font-family: 'Dosis', sans-serif;
-    font-weight: 300;
-    color: white;
-}
-
-.contact{
-    /* background-color: #de90ff; */
-    justify-self: center;
-} 
-
-.shop{ 
-    /* background-color: #de90ff; */
-    align-self: center; 
-    justify-self: flex-end;
-
-}
-
 
 
 
@@ -133,21 +141,15 @@ header h1{
     text-transform: uppercase;
     text-decoration: none;
     padding-bottom: 2vh;
+    padding-top: 2vh;
     font-family: 'Dosis', sans-serif;
-    font-weight: 200;
-    color: white;
-}
-header h2{ /*ERROR h1 EN PORTFOLIO SI no lo cambio a este se sigue viendo grande no se porque */
-    text-transform: uppercase;
-    text-decoration: none;
-    padding-bottom: 0vh;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 200;
-    color: white;
+    font-weight: 300;
+    color: white; 
+    font-size:x-large;
 }
 
 nav{
-    padding: 2.5%;
+    padding: 1vw;
     display: flex;
     flex-wrap: wrap; 
     flex-direction: column;
@@ -241,8 +243,6 @@ footer:hover{
 
 
 } */
-
-
 .carousel-inner img{
     margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
@@ -257,14 +257,20 @@ footer:hover{
 }
 
 
+.carousel-portfolio{
+    margin-top: 3vh;
+}
+
 /*-------------SHOP--------------*/
+
+
 
 
 table{
     margin: 5vh auto ;
     padding: 10vh 10vw;
     height: 30vh;
-    width: 30vw;
+    width: 80vw;
 
     text-align: center;
     font-family: 'Dosis', sans-serif;
@@ -288,28 +294,10 @@ td {
     padding: 2vh;
 }
 
-
-.prints {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-gap: 3%;
-
-    z-index: auto;
+.prints{
+    display: none;
 }
 
-.prints img{
-    margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    max-width: 100vw;
-    max-height: 80vh;
-
-}
 
 
 
@@ -492,24 +480,18 @@ color: rgb(255, 255, 255);
 
 /*------------ABOUT-------------*/
 
-.main-about{
+.card{
     margin: 5vh auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
     padding: 10vh 10vw;
     height: fit-content;
-    width: fit-content  ;
+    width:fit-content ;
 
     text-align: center;
     background-color: #ffffff52;
 
 
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-
-
 }
+
 
 p{
     font: 300 18px 'Dosis', sans-serif;
@@ -526,7 +508,7 @@ h2{
 }
 
 
-/*---------------------------------MEDIA QUERY ---------------------------------------*/
+/*--------------------------------------------MEDIA QUERY ---------------------------------------------------*/
 
 /*Cambio iconos social media */
 @media screen and (min-width: 400px){  
@@ -538,10 +520,13 @@ h2{
     .nft {
         filter: invert(1);
     }
+
+    
+
 }
 
 /*------------------------------------------TABLET------------------------------------------------*/
-@media screen and (min-width: 728px){ 
+@media screen and (min-width: 700px){ 
     header h1{
 
         padding-bottom: 0;
@@ -590,16 +575,24 @@ h2{
         margin-top: 4%;
         height: 100vh;
         width: 100vw;
-   
     }
-    .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
-        margin: 0 auto;
-        height: 100vh;
-        max-width: 90%;
      
+    .botones_home{ 
+        display: none;
     }
 
-    .social-media {
+    .container-fluid
+     { display:contents;
+        } 
+          
+
+     /*imagenes botones */
+    #about{
+    margin-top: 20%;
+    }
+
+
+     .social-media {
 
         font-size: 5vw;
     }
@@ -619,7 +612,7 @@ h2{
 
     /*-----------ABOUT ---------*/
 
-    .main-about{
+    .card{
         margin: 5vh auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
         padding: 10vh 10vw;
         height: 60vh;
@@ -629,7 +622,6 @@ h2{
         background-color: #ffffff52;
 
 
-
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -637,6 +629,12 @@ h2{
         justify-content: space-evenly;
 
     }
+
+    /*------------SHOP-----------*/
+    table{
+        width: 50vw;
+    }
+
 
    }
 
@@ -686,7 +684,7 @@ h2{
     .nft {
         filter: invert(1);
 
-    }
+    } 
 
  /*---------CONTACT --------------*/
      
@@ -760,7 +758,7 @@ h2{
 
    /*---------PORTFOLIO------------*/
 
-   .Portfolio{
+   /* .Portfolio{
         display: grid;
         grid-template-columns:  1fr 1fr;
         grid-gap: 2% ;
@@ -770,33 +768,50 @@ h2{
     .Portfolio img{
         margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
 
-        display: flex;
+        /* display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         align-content: center;
         max-width: 40vw;
         max-height: 60vh;
 
-    }
+    } */
 
 
 /*------------SHOP-------------*/
 
+.carousel-shop{
+    display:none;
+}
     .prints {
+        display: contents;
+        margin: 0 auto;
+        display: grid;
 
         grid-template-columns:  1fr 1fr;
-        grid-gap: 0% ;
+        grid-gap: 3%;
         margin-bottom: 10%;
         margin-top: 5%;
+        z-index: auto;
     }
-
+    
     .prints img{
-
-        justify-content: space-around;
+        margin: 0 auto;/*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+    
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         align-content: center;
-        max-width: 40vw;
-        max-height: 60vh;
 
+        max-width: 100vw;
+        max-height: 80vh;
+    
+    }
+    
+
+    table{
+        width: 30vw;
     }
 }
 
