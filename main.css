@@ -335,14 +335,14 @@ form{
 
 }
 
- /* CONTACTO DERECHA */
+/* CONTACTO DERECHA */
 
 .contact-form div{
     flex-direction: row;
     margin: 2vh;
     justify-content: space-evenly;
     align-items: center;
-    }
+}
 
 /*tamaño formulario min max*/
 textarea, input{ 
@@ -369,7 +369,7 @@ textarea, input{
     background-color: transparent;
 }
 
-    /*---------TRANSICION----------*/
+/*---------TRANSICION----------*/
 .button-contact:hover{
     background-color: #de90ffe4;
     transition: 0.7s;
@@ -590,7 +590,7 @@ h2{
     }
 
 
-     .social-media {
+    .social-media {
 
         font-size: 5vw;
     }
@@ -633,13 +633,11 @@ h2{
         width: 50vw;
     }
 
+} /*FIN TABLET*/
 
-   } /*FIN TABLET*/
 
-
-    /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
- @media screen and (min-width: 1024px)
-{ 
+/*--------------------------------------------------------DESKTOP------------------------------------------------------*/
+@media screen and (min-width: 1024px){ 
     .icon-insta{
         font-size: 4vh;
         display: flex;
@@ -781,6 +779,7 @@ h2{
     .carousel-shop{
         display:none;
     }
+
     .prints {
         display: contents;
         margin: 0 auto;
@@ -806,7 +805,6 @@ h2{
         max-height: 80vh;
     
     }
-    
 
     table{
         width: 30vw;
