@@ -2,92 +2,88 @@
 /*------------------NAV_BAR------------------*/
 /*-------TRANSICION--------*/
 @import url("https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap");
-nav:hover {
-  background-color: #ffffff17;
-  transition-duration: 1s; }
-
-header h1 {
+nav h1 {
   text-transform: uppercase;
   text-decoration: none;
   padding-bottom: 2vh;
   padding-top: 2vh;
-  font-family: 'Dosis', sans-serif;
-  font-weight: 300;
-  color: white;
-  font-size: x-large; }
+  font-family: "Dosis", sans-serif;
+  color: #ffff; }
 
-nav {
-  padding: 1vw;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  position: sticky;
-  top: 0; }
+nav:hover {
+  background-color: #ffffff17;
+  transition-duration: 1s; }
 
-nav ul {
-  display: flex;
-  height: fit-content;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  list-style: none;
-  z-index: 10; }
-
-nav a {
+nav .nav-item a, nav #navbarScrollingDropdown, nav .dropdown-item {
   text-transform: uppercase;
   text-decoration: none;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
+  color: #ffff;
   font-weight: 300;
-  color: white; }
+  color: #ffffff; }
+  nav .nav-item a:hover, nav #navbarScrollingDropdown:hover, nav .dropdown-item:hover {
+    color: #de90ff; }
+
+nav .dropdown-menu {
+  background-color: transparent;
+  color: #ffffff; }
+
+nav button {
+  /*important para sacar el color del borde del button de bootstrap*/
+  color: transparent !important; }
 
 a {
   text-decoration: none;
   list-style: none;
   color: #ffffff; }
+  a:hover {
+    color: #de90ff; }
 
-a:hover {
-  color: #de90ff; }
+.icon-cart, .icon-insta {
+  display: none; }
 
-.icon-insta img {
+.icon-insta img, .icon-cart img {
   display: flex;
   flex-wrap: wrap;
   align-items: center; }
 
-.icon-cart img {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center; }
+#nav-about {
+  font-size: large  !important;
+  height: 8vh !important;
+  padding: 1.5% !important; }
+  #nav-about h1 {
+    font-size: x-large !important; }
 
 /*-------FOOTER----------*/
 footer {
-  padding: 1%;
   display: flex;
-  justify-self: center;
-  justify-content: center;
-  align-content: space-around;
+  flex-wrap: wrap;
+  padding: 1%;
+  margin-top: 5vh;
   /*mobile*/
-  margin-top: 10vh;
   text-decoration: none;
-  font-family: 'Dosis', sans-serif;
-  font-weight: 300;
-  color: white; }
-  footer img {
-    height: 2.7vh;
-    filter: invert(1); }
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Dosis", sans-serif;
+  color: #ffff; }
+  footer p {
+    justify-content: flex-end;
+    margin-top: 2vh; }
+    footer p img {
+      height: 2.7vh;
+      filter: invert(1); }
   footer:hover {
     background-color: #ffffff17;
     transition-duration: 1s; }
-
-/*DESKTOP*/
-@media screen and (min-width: 1024px) {
-  footer {
-    margin-top: 0;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-content: space-around; } }
+  footer img {
+    max-width: 1.5em;
+    filter: invert(1); }
+  footer .fa-twitter, footer .fa-instagram, footer .fa-github {
+    align-content: space-around;
+    font-size: 1.8em; }
+    footer .fa-twitter:hover, footer .fa-instagram:hover, footer .fa-github:hover {
+      color: #de90ff;
+      transition: 0.7s; }
 
 * {
   /*Con esto  elimino lo que esta por defecto y no se me suma a lo que yo setee*/
@@ -118,7 +114,7 @@ body {
   display: none; }
 
 .main_home {
-  margin-top: 2vh;
+  margin-top: 20vh;
   height: 100vh;
   width: fit-content; }
 
@@ -141,11 +137,7 @@ body {
   grid-template-rows: 2fr 5fr 2fr;
   grid-gap: 10%; }
 
-.about {
-  /* background-color: #de90ff; */
-  justify-self: center; }
-
-.contact {
+.about, .contact {
   /* background-color: #de90ff; */
   justify-self: center; }
 
@@ -182,8 +174,8 @@ body {
   /* background-color: #de90ff; */
   text-align: center;
   font-size: x-large;
-  font-family: 'Dosis', sans-serif;
-  color: white;
+  font-family: "Dosis", sans-serif;
+  color: #ffff;
   animation: updownfadein 4s; }
 
 /*---------------------------------------------------*/
@@ -201,6 +193,16 @@ body {
 .carousel-portfolio {
   margin-top: 3vh; }
 
+#video {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 30vh;
+  margin-bottom: 30vh; }
+  #video p {
+    font-family: "Dosis", sans-serif;
+    color: #ffff; }
+
 /*-------------SHOP--------------*/
 table {
   margin: 5vh auto;
@@ -208,9 +210,9 @@ table {
   height: 30vh;
   width: 80vw;
   text-align: center;
-  font-family: 'Dosis', sans-serif;
   font-weight: 200;
-  color: #ffffff;
+  font-family: "Dosis", sans-serif;
+  color: #ffff;
   background-color: #ffffff52;
   border-collapse: collapse; }
   table th {
@@ -234,18 +236,16 @@ table {
   align-items: center; }
 
 form {
+  margin: 3vw auto;
   display: grid;
   grid-template-columns: 2fr;
   justify-content: space-evenly;
-  margin: 5vh auto;
   height: fit-content;
   background: #ffffff52;
   text-align: center; }
   form h3 {
-    font-family: 'Dosis', sans-serif;
-    font-size: x-large;
-    font-weight: 300;
-    color: #ffffff; }
+    font-family: "Dosis", sans-serif;
+    color: #ffff; }
 
 .contact-form {
   margin: 2vh auto;
@@ -262,7 +262,7 @@ form {
 
 /* CONTACTO IZQUIERDA */
 textarea, input {
-  margin: 0.5vh;
+  margin: 0.5vh auto;
   min-height: 5vh;
   min-width: 60vw;
   max-width: 60vw;
@@ -270,10 +270,10 @@ textarea, input {
   border-color: transparent; }
 
 .button-contact {
-  font-family: 'Dosis', sans-serif;
-  font-size: x-large;
-  font-weight: 300;
+  font-family: "Dosis", sans-serif;
   color: #ffff;
+  font-size: large;
+  text-align: center;
   border-color: #de90ff;
   margin: 0.5vh;
   min-height: 2.5vh;
@@ -289,13 +289,12 @@ textarea, input {
 
 /* CONTACTO DERECHA */
 .contact-list {
-  margin: 0 auto;
+  margin: 3vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  max-width: 50vw;
   height: 40vh;
   list-style-type: none; }
   .contact-list ul {
@@ -306,27 +305,24 @@ textarea, input {
       color: white;
       text-decoration: none; }
       .contact-list ul li span {
-        font: 300 18px 'Dosis', sans-serif;
+        color: #ffffff;
         letter-spacing: 1.9px;
-        color: white;
-        margin-left: 2vw; }
+        margin-left: 2vw;
+        font: 18px 'Dosis', sans-serif; }
       .contact-list ul li:hover {
         color: #de90ff;
         transition: 0.7s; }
 
 /*--------ICONS SOCIAL MEDIA----------*/
 .social-media {
-  width: 100vw;
-  /*seteo ancho contenedor para controlar el spacio de justify*/
-  text-align: center;
-  font-size: 10vw;
+  width: 90vw;
+  /*seteo ancho contenedor para controlar el espacio de justify*/
+  font-size: 2em;
   margin-top: 5vh;
   margin-bottom: 10vh;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-around; }
   .social-media a:hover {
     color: #de90ff;
     transition: 0.7s; }
@@ -337,8 +333,7 @@ textarea, input {
 /*no funciona hover en img como cambiar color como a iconos */
 /*------------ABOUT-------------*/
 .card {
-  margin: 4vw auto;
-  /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+  margin: 3vw auto;
   padding: 10vh 10vw;
   height: fit-content;
   width: fit-content;
@@ -346,45 +341,19 @@ textarea, input {
   background-color: #ffffff52; }
 
 p {
-  font: 300 18px 'Dosis', sans-serif;
-  letter-spacing: 1.9px;
-  color: #ffffff; }
+  font-family: 'Dosis', sans-serif;
+  color: #ffffff;
+  letter-spacing: 1.9px; }
 
 h2 {
-  font-family: 'Dosis', sans-serif;
-  font-size: x-large;
-  font-weight: 300;
-  color: #ffffff; }
+  font-family: "Dosis", sans-serif;
+  color: #ffff; }
 
 /*--------------------------------------------MEDIA QUERY ---------------------------------------------------*/
-/*Cambio iconos social media */
-@media screen and (min-width: 400px) {
-  .social-media {
-    justify-content: space-around;
-    font-size: 8vw; }
-  .nft {
-    filter: invert(1); } }
-
 /*------------------------------------------TABLET------------------------------------------------*/
 @media screen and (min-width: 700px) {
   header h1 {
     padding-bottom: 0; }
-  nav {
-    flex-direction: row;
-    align-items: none; }
-    nav ul {
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-content: center;
-      align-items: center; }
-  .icon-insta {
-    font-size: 4vh;
-    display: flex;
-    flex-wrap: wrap; }
-  .icon-cart {
-    font-size: 4vh;
-    display: flex;
-    flex-wrap: wrap; }
   body {
     display: flex;
     flex-direction: none;
@@ -404,28 +373,17 @@ h2 {
   /*imagenes botones */
   #about {
     margin-top: 20%; }
-  .social-media {
-    font-size: 5vw; }
-  .nft {
-    filter: invert(1);
-    max-width: 30vw; }
-  footer {
-    margin-top: 0;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-content: space-around; }
+  footer .fa-twitter, footer .fa-instagram, footer .fa-github {
+    font-size: 1.5em; }
   /*-----------ABOUT ---------*/
   .card {
-    padding: 10vh 10vw;
     height: 60vh;
     width: 60vw;
+    align-content: center;
     text-align: center;
-    background-color: #ffffff52;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
     justify-content: space-evenly; }
   /*------------SHOP-----------*/
   table {
@@ -433,17 +391,13 @@ h2 {
 
 /*FIN TABLET*/
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
-@media screen and (min-width: 1024px) {
-  .icon-insta {
-    font-size: 4vh;
+@media screen and (min-width: 992px) {
+  .icon-cart-mobile, .icon-insta-mobile {
+    display: none; }
+  .icon-cart, .icon-insta {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-end; }
-  .icon-cart {
-    font-size: 4vh;
-    display: flex;
-    flex-wrap: wrap; }
+    justify-content: flex-end;
+    font-size: 4vh; }
   body {
     display: flex;
     flex-direction: none;
@@ -454,29 +408,38 @@ h2 {
     height: 100vh;
     max-width: 100%; }
   .social-media {
-    margin-top: 10vh;
-    font-size: 2.5vw; }
-  .nft {
-    filter: invert(1); }
+    max-width: 70vw;
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+    font-size: 2.5em; }
+  footer {
+    margin-top: 0 auto; }
+    footer p {
+      margin-top: 0; }
+    footer .fa-twitter, footer .fa-instagram, footer .fa-github {
+      font-size: 1.7em;
+      align-content: center; }
   /*---------CONTACT --------------*/
   form {
-    grid-template-columns: 2fr 2fr;
-    justify-content: center;
-    align-content: center;
     height: 60vh;
-    width: 60vw; }
+    width: 60vw;
+    align-content: center;
+    grid-template-columns: 2fr 2fr; }
   .contact-form {
-    margin: 4vw;
+    margin: 3vw auto;
     flex-direction: row;
-    min-width: 25vw;
-    max-width: 25vw; }
+    min-width: fit-content;
+    max-width: fit-content;
+    justify-content: center; }
   input {
+    margin: 0.5vh auto;
     justify-self: center;
     min-height: 5vh;
     max-height: 5vh;
     min-width: 25vw;
     max-width: 25vw; }
   textarea {
+    margin: 0.5vh;
     justify-self: center;
     min-height: 2vh;
     max-height: 20vh;
@@ -490,16 +453,11 @@ h2 {
     max-width: 25vw; }
   /* CONTACTO DERECHA */
   .contact-list {
-    margin: 4vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    margin: 10vw auto;
     max-width: 25vw;
-    height: 40vh;
+    height: fit-content;
     text-align: left;
     padding-left: 0; }
-  /*---------PORTFOLIO------------*/
   /*------------SHOP-------------*/
   .carousel-shop {
     display: none; }

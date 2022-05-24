@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--meta keywords-->
+    <meta name="keywords" content="Maira, pinetta, arte, art, photography, multimedia, fotografía, diseño, portfolio, diseño web, cart, shop, prints, order,nft ">
 
-   <!--meta keywords-->
-   <meta name="keywords" content="Maira, pinetta, arte, art, photography, multimedia, fotografía, diseño, portfolio, diseño web ">
-  
-   <!--meta keywords-->
-   <meta name="description" content=" Maira Pinetta, Multimedia Artist and Developer from Argentina">
-   
-   <!--Icono página-->
-   <link rel="icon" type="icon" href="./Images/pluto.png">
-   
-    <!--Font awesome icons-->    
+    <!--meta keywords-->
+    <meta name="description" content="Prints and nfts available">
+    
+    <!--Icono página-->
+    <link rel="icon" href="../Images/cart-shopping-solid.svg">
+
+    <!--Linkf iconos-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
     <!--LINK a BOOTSTRAP-----Se pone ANTES de mi CSS Para que no me lo pise --> 
@@ -24,46 +24,71 @@
     <!--llamo css-->
     <link rel="stylesheet" href="../css/main.css">
  
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap" rel="stylesheet">
 
     <title>Shop</title>
 </head>
+
 <body>
 
-<img id = "background_home" src="../Images/background_Pinetta.jpg" alt="Background_home">
+    <img id = "background_home" src="../Images/background_Pinetta.jpg" alt="Background_home">
 
-    <nav>
+    <nav class="navbar navbar-expand-lg sticky-lg-top  ">
+        <div class="container-fluid">
+            <h1 class="navbar-brand">Shop</h1>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <header>
-            <h1>Shop</h1>
-        </header>   
-
-        <ul> <!--lista Navegación -->
-            <li> <!--list item-->
-                <a href="../index.html">Home</a> 
-            </li>
-
-            <li> <!--list item-->
-                <a href="../Pages/portfolio.html">Portfolio</a> 
-            </li>
-
-            <li>
-                <a href="../Pages/about.html">About</a> 
-            </li>
-
-            <li>
-                <a href="../Pages/contact.html">Contact</a> 
-            </li>
-            <div class="icon-cart">
+            <div class="icon-cart-mobile">
                 <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>   
             </div>  
-        </ul>
 
- 
+            <div class="collapse navbar-collapse" id="navbarScroll">
 
+                <ul class="navbar-nav navbar-nav-scroll w-100 d-flex justify-content-around " style="--bs-scroll-height: 100px;">
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portfolio
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="./portfolio.html#video">Video</a></li>
+                        <li><a class="dropdown-item" href="./portfolio.html#photography">Photography</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                           <li><a class="dropdown-item" href="https://teia.art/Celestialblood">NFT</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html" >About</a>
+                    </li>
+
+                    <div class="icon-cart">
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>   
+                    </div>  
+
+                </ul>
+
+
+            </div>
+        </div>
     </nav>
+
+            
+    
 
     <main class="main-shop">
 
@@ -145,7 +170,14 @@
     </main>
     
     <footer>
+
+        <a href="https://twitter.com/_celestialblood"target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/_celestialblood/"target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/celestialblood"target="_blank"><i class="fab fa-github"></i></a>
+        <a class= "nft-footer" href="https://teia.art/Celestialblood" target="_blank"><img src="../Images/nft.png"></img></a>
+        
         <p>Copyright &copy; 2022    <span>   Maira Pinetta</span>. <img src="../Images/pluto.png"></p>
+    
     </footer>
 
     <script src="https://kit.fontawesome.com/53cd0afe9d.js" crossorigin="anonymous"></script> 

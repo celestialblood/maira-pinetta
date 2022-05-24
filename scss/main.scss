@@ -1,8 +1,9 @@
+
+@import "variables";
 @import "nav&footer";
+
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald:wght@500&display=swap');
 
-$margin:4vw;
-$padding:4vw;
 
 
 *{/*Con esto  elimino lo que esta por defecto y no se me suma a lo que yo setee*/
@@ -11,6 +12,24 @@ $padding:4vw;
     box-sizing: border-box;
 }  
 
+$font-sizes: (
+    social-media-mobile: 2em,
+    muygrande: x-large,
+    grande:large,
+);
+
+
+@mixin container_desktop ($height, $width){
+
+    height: $height;
+    width: $width;
+    align-content: center;
+}   
+
+@mixin tipografia ($colorfont, $font){
+    font-family: $font;
+    color:$colorfont;
+}
 
 /*----------------MOBILE FIRST------------------*/
 
@@ -39,7 +58,7 @@ overflow-x: hidden;}
 }
 
 .main_home{
-    margin-top: 2vh;
+    margin-top: 20vh;
     height: 100vh;
     width: fit-content;
 }
@@ -73,8 +92,7 @@ overflow-x: hidden;}
 
 
 .contact{
-    /* background-color: #de90ff; */
-    justify-self: center;
+    @extend .about;
 } 
 
 .shop{ 
@@ -119,10 +137,8 @@ overflow-x: hidden;}
     justify-content: center;
     /* background-color: #de90ff; */
     text-align: center;
-    font-size:x-large;
-    font-family: 'Dosis', sans-serif;
-    color: white; 
-
+    font-size:map-get($font-sizes, muygrande);
+    @include tipografia( $colorfont, $font);
 
     animation: updownfadein 4s ;
 
@@ -143,16 +159,27 @@ overflow-x: hidden;}
 
     max-width: 100vw;
     max-height: 80vh;
-
+  
 }
 
 
 .carousel-portfolio{
     margin-top: 3vh;
+
 }
 
+#video{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    p{
+        @include tipografia( $colorfont, $font);
+     
+    }
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
 /*-------------SHOP--------------*/
-
 
 
 table{
@@ -162,9 +189,9 @@ table{
     width: 80vw;
 
     text-align: center;
-    font-family: 'Dosis', sans-serif;
     font-weight: 200;
-    color: #ffffff;
+    @include tipografia( $colorfont, $font);
+
 
     background-color: #ffffff52;
     border-collapse: collapse;
@@ -182,13 +209,9 @@ table{
     }
 }
 
-
-
 .prints{
     display: none;
 }
-
-
 
 
 /*---------------CONTACT-------------*/
@@ -203,30 +226,24 @@ table{
 
 
 form{
-
+    margin: $margin auto;
     display: grid;
     grid-template-columns: 2fr;
     justify-content: space-evenly;
     
-    margin: 5vh auto;
     height: fit-content;
-
 
     background: #ffffff52;
     text-align: center;
 
     h3{
+        @include tipografia( $colorfont, $font);
     
-        font-family: 'Dosis', sans-serif;
-        font-size: x-large;
-        font-weight: 300;
-        color: #ffffff;
     }
 
 }
 
 .contact-form{
-
     margin: 2vh auto;
     display: flex;
     flex-wrap: wrap;
@@ -244,7 +261,7 @@ form{
 /* CONTACTO IZQUIERDA */
 
 textarea, input{ 
-    margin: 0.5vh;
+    margin: 0.5vh auto;
     min-height: 5vh;
     min-width: 60vw;
     max-width: 60vw;
@@ -254,10 +271,11 @@ textarea, input{
 }
 
 .button-contact{
-    font-family: 'Dosis', sans-serif;
-    font-size: x-large;
-    font-weight: 300;
-    color:#ffff;
+
+    @include tipografia( $colorfont, $font);
+
+    font-size:map-get($font-sizes, grande);
+    text-align: center;
     border-color: #de90ff;
 
     margin: 0.5vh;
@@ -280,13 +298,12 @@ textarea, input{
 /* CONTACTO DERECHA */
 
 .contact-list {
-    margin: 0 auto;
+    margin:$margin;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    max-width: 50vw;
     height: 40vh;
     list-style-type: none;
 
@@ -300,13 +317,11 @@ textarea, input{
             color: rgb(255, 255, 255);
 
             text-decoration: none;
-           
-            span{
-                font: 300 18px 'Dosis', sans-serif;
-                letter-spacing: 1.9px;
-                color: rgb(255, 255, 255);     
+            span {
+                color: #ffffff;
+                letter-spacing: 1.9px;  
                 margin-left: 2vw;
-        
+                font: 18px 'Dosis', sans-serif;
             }
 
             &:hover{
@@ -316,25 +331,23 @@ textarea, input{
     
         } 
     }
-}
 
+}
 
 
 /*--------ICONS SOCIAL MEDIA----------*/
 
 .social-media {
-    width: 100vw; /*seteo ancho contenedor para controlar el spacio de justify*/
-    text-align: center;
-    font-size: 10vw;
+    width: 90vw; /*seteo ancho contenedor para controlar el espacio de justify*/
+    font-size: map-get($font-sizes, social-media-mobile);
     margin-top: 5vh;
     margin-bottom: 10vh;
-    margin-left: auto;
-    margin-right: auto;
-
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-around; 
+
+
     a:hover{
         color: #de90ff;
         transition: 0.7s;
@@ -348,11 +361,10 @@ textarea, input{
 
 
 
-
 /*------------ABOUT-------------*/
 
 .card{
-    margin: $margin auto; /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+    margin: $margin auto;
     padding: 10vh 10vw;
     height: fit-content;
     width:fit-content ;
@@ -362,38 +374,22 @@ textarea, input{
 
 }
 
-
 p{
-    font: 300 18px 'Dosis', sans-serif;
-    letter-spacing: 1.9px;
+    font-family: 'Dosis', sans-serif;
     color: #ffffff;
-
+    letter-spacing: 1.9px;
+   
 }
 
 h2{
-    font-family: 'Dosis', sans-serif;
-    font-size: x-large;
-    font-weight: 300;
-    color: #ffffff;
+    @include tipografia($colorfont, $font );
+
+  
 }
 
 
 /*--------------------------------------------MEDIA QUERY ---------------------------------------------------*/
 
-/*Cambio iconos social media */
-@media screen and (min-width: 400px){  
-    .social-media {
-        justify-content: space-around;
-        font-size: 8vw;
-    }
-
-    .nft {
-        filter: invert(1);
-    }
-
-    
-
-}
 
 /*------------------------------------------TABLET------------------------------------------------*/
 @media screen and (min-width: 700px){ 
@@ -403,33 +399,7 @@ h2{
 
     }
 
-    nav{
-        flex-direction: row;
-        align-items: none;
-
-        ul{  
-
-            flex-direction: row;
-            justify-content:space-evenly;
-            align-content: center ;
-            align-items: center;
-        }
-    }
-
-    .icon-insta{
-        font-size: 4vh;
-        display: flex;
-        flex-wrap: wrap;
-
-        
-    }
     
-    .icon-cart {
-        font-size: 4vh;
-        display: flex;
-        flex-wrap: wrap;
-
-    } 
     body{
         display: flex;
         flex-direction: none;
@@ -441,8 +411,8 @@ h2{
         min-height: 100%;
 
         height:none;
-   
     }
+
     .main_home{
         margin-top: 4%;
         height: 100vh;
@@ -453,50 +423,36 @@ h2{
         display: none;
     }
 
-    .container-fluid
-     { display:contents;
-        } 
+    .container-fluid{
+         display:contents;
+    } 
           
 
-     /*imagenes botones */
+    /*imagenes botones */
     #about{
     margin-top: 20%;
     }
+  
 
+    footer{
+        .fa-twitter, .fa-instagram, .fa-github {
 
-    .social-media {
+            font-size: 1.5em;
+     
+        } 
 
-        font-size: 5vw;
     }
-
-    .nft {
-        filter: invert(1);
-        max-width: 30vw;
-    }
-
-
-   footer{
-    margin-top: 0;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-content:space-around; }
 
     /*-----------ABOUT ---------*/
 
     .card{
        
-        padding: 10vh 10vw;
-        height: 60vh;
-        width: 60vw;
+        @include container_desktop($height, $width);
+
         text-align: center;
-        background-color: #ffffff52;
-
-
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        align-content: center;
         justify-content: space-evenly;
 
     }
@@ -510,24 +466,18 @@ h2{
 
 
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
-@media screen and (min-width: 1024px){ 
-    .icon-insta{
-        font-size: 4vh;
+@media screen and (min-width: 992px){ 
+    .icon-cart-mobile, .icon-insta-mobile{
+        display:none;
+    }
+
+    .icon-insta, .icon-cart{
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: flex-end
-        
+        justify-content: flex-end;
+        font-size: 4vh;
     }
     
-    .icon-cart {
-        font-size: 4vh;
-        display: flex;
-        flex-wrap: wrap;
-
-    } 
     
-
     body{
         display: flex;
         flex-direction: none;
@@ -543,39 +493,51 @@ h2{
    
     }
     
-    .social-media {
-        margin-top: 10vh;
-        font-size: 2.5vw;
+
+    .social-media{
+        max-width: 70vw;
+        margin-top: 1vh;
+        margin-bottom: 0.5vh;
+        font-size: 2.5em;
+    }
+
+
+    footer{
+        margin-top: 0 auto;
+
+        p{
+            margin-top: 0;
+        }
+    
+        .fa-twitter, .fa-instagram, .fa-github {
+            font-size: 1.7em;
+            align-content: center;
+        }
     }
     
-
-    .nft {
-        filter: invert(1);
-
-    } 
 
  /*---------CONTACT --------------*/
         
 
     form{
-        grid-template-columns: 2fr 2fr;
-        justify-content: center;
-        align-content: center;
+        @include container_desktop($height, $width);
 
-        height: 60vh;
-        width: 60vw;
+        grid-template-columns: 2fr 2fr;
+
     }
 
     .contact-form{
-        margin: $margin;
+        margin: $margin auto;
         flex-direction: row;
-        min-width: 25vw;
-        max-width: 25vw;
+        min-width: fit-content;
+        max-width: fit-content;
+        justify-content: center;
 
     }
 
 
     input{ 
+        margin: 0.5vh auto ;
         justify-self: center;
         min-height: 5vh;
         max-height: 5vh;
@@ -584,6 +546,8 @@ h2{
     }
 
     textarea{
+   
+        margin: 0.5vh ;
         justify-self: center;
         min-height: 2vh;
         max-height: 20vh;
@@ -604,24 +568,14 @@ h2{
     /* CONTACTO DERECHA */
 
     .contact-list {
-        margin: $margin;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-
+        margin: 10vw auto;
+ 
         max-width: 25vw;
-        height: 40vh;
-
+        height: fit-content;
         text-align: left;
         padding-left: 0;
 
     }
-
-
-    /*---------PORTFOLIO------------*/
-
-
 
 
     /*------------SHOP-------------*/
