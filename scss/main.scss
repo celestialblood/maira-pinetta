@@ -338,7 +338,7 @@ textarea, input{
 /*--------ICONS SOCIAL MEDIA----------*/
 
 .social-media {
-    width: 90vw; /*seteo ancho contenedor para controlar el espacio de justify*/
+    width: 80vw; /*seteo ancho contenedor para controlar el espacio de justify*/
     font-size: map-get($font-sizes, social-media-mobile);
     margin-top: 5vh;
     margin-bottom: 10vh;
@@ -346,6 +346,7 @@ textarea, input{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; 
+    align-content: center;
 
 
     a:hover{
@@ -365,7 +366,7 @@ textarea, input{
 
 .card{
     margin: $margin auto;
-    padding: (10vh -10vh) 10vw;
+    padding: 10vh 10vw;
     height: fit-content;
     width:fit-content ;
 
@@ -495,7 +496,7 @@ h2{
     
 
     .social-media{
-        max-width: 70vw;
+        max-width: fit-content;
         margin-top: 1vh;
         margin-bottom: 0.5vh;
         font-size: 2.5em;
