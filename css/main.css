@@ -334,7 +334,7 @@ textarea, input {
 /*------------ABOUT-------------*/
 .card {
   margin: 3vw auto;
-  padding: 10vh 10vw;
+  padding: 10vh -10vh 10vw;
   height: fit-content;
   width: fit-content;
   text-align: center;

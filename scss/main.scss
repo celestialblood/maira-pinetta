@@ -365,7 +365,7 @@ textarea, input{
 
 .card{
     margin: $margin auto;
-    padding: 10vh 10vw;
+    padding: (10vh -10vh) 10vw;
     height: fit-content;
     width:fit-content ;
 
