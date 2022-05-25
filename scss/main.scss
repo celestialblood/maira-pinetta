@@ -338,7 +338,7 @@ textarea, input{
 /*--------ICONS SOCIAL MEDIA----------*/
 
 .social-media {
-    width: 80vw; /*seteo ancho contenedor para controlar el espacio de justify*/
+    max-width: 100vw; /*seteo ancho contenedor para controlar el espacio de justify*/
     font-size: map-get($font-sizes, social-media-mobile);
     margin-top: 5vh;
     margin-bottom: 10vh;
@@ -446,10 +446,8 @@ h2{
 
     /*-----------ABOUT ---------*/
 
-    .card{
-       
-        @include container_desktop($height, $width);
 
+    .card{
         text-align: center;
         display: flex;
         flex-wrap: wrap;
@@ -496,7 +494,7 @@ h2{
     
 
     .social-media{
-        max-width: fit-content;
+       
         margin-top: 1vh;
         margin-bottom: 0.5vh;
         font-size: 2.5em;
@@ -517,6 +515,17 @@ h2{
     }
     
 
+
+    /*--------------ABOUT-------------*/
+    .card{
+    @include container_desktop($height, $width);
+    }
+
+    #nav-about{
+
+        height: 8vh !important;
+
+    }
  /*---------CONTACT --------------*/
         
 
