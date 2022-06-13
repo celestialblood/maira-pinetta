@@ -115,7 +115,7 @@ body {
 .main_home {
   margin-top: 20vh;
   height: 100vh;
-  width: fit-content; }
+  max-width: fit-content; }
 
 /*INDEX sin bootstrap para mobile*/
 .botones_home {
@@ -129,6 +129,8 @@ body {
   /* background-color: #de90ff; */
   align-self: center;
   justify-self: flex-start; }
+  .portfolio img {
+    max-width: 20vh; }
 
 /*CONTENEDOR COLUMNA MEDIO para about, contact y nombre*/
 .column_botones {
@@ -139,11 +141,15 @@ body {
 .about, .contact {
   /* background-color: #de90ff; */
   justify-self: center; }
+  .about img, .contact img {
+    max-width: 18vh; }
 
 .shop {
   /* background-color: #de90ff; */
   align-self: center;
   justify-self: flex-end; }
+  .shop img {
+    max-width: 20vh; }
 
 /*---------TRANSICION----------*/
 .main_home div img:hover {
@@ -192,15 +198,27 @@ body {
 .carousel-portfolio {
   margin-top: 3vh; }
 
-#video {
+.video {
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   margin-top: 30vh;
   margin-bottom: 30vh; }
-  #video p {
+  .video p {
+    text-align: center;
     font-family: "Dosis", sans-serif;
     color: #ffff; }
+  .video .videoWrapper {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center; }
+    .video .videoWrapper .videoWrapper iframe {
+      position: absolute; }
 
 /*-------------SHOP--------------*/
 table {
@@ -391,7 +409,7 @@ h2 {
 @media screen and (min-width: 992px) {
   .icon-cart-mobile, .icon-insta-mobile {
     display: none; }
-  .icon-cart, .icon-insta {
+  .icon-insta, .icon-cart {
     display: flex;
     justify-content: flex-end;
     font-size: 4vh; }

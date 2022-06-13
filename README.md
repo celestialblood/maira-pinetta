@@ -1,9 +1,5 @@
 # maira-pinetta
 
+Resposive site Mobile first created with html css & bootstrap
+
 Maira Pinetta 
-
-*Cree los keywords, los faviicon, las descripciones para todas las páginas.
-
-*Organize la semántica un poco más. 
-
-*Arregle nav bar con bootstrap
