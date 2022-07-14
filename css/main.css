@@ -241,9 +241,6 @@ table {
     vertical-align: center;
     padding: 2vh; }
 
-.prints {
-  display: none; }
-
 /*---------------CONTACT-------------*/
 .main_contact {
   display: flex;
@@ -409,7 +406,7 @@ h2 {
 @media screen and (min-width: 992px) {
   .icon-cart-mobile, .icon-insta-mobile {
     display: none; }
-  .icon-insta, .icon-cart {
+  .icon-cart, .icon-insta {
     display: flex;
     justify-content: flex-end;
     font-size: 4vh; }
@@ -482,24 +479,44 @@ h2 {
   /*------------SHOP-------------*/
   .carousel-shop {
     display: none; }
-  .prints {
-    display: contents;
+  .main-shop {
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3%;
-    margin-bottom: 10%;
-    margin-top: 5%;
-    z-index: auto; }
-    .prints img {
-      margin: 0 auto;
-      /*centra el elemento / top /bottom es 0 y left/right auto (set automatico dependiendo del browser basado en el contenedor)*/
+    box-sizing: border-box; }
+    .main-shop .box-container {
       display: flex;
-      flex-direction: column;
       flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
-      max-width: 100vw;
-      max-height: 80vh; }
+      align-items: center;
+      justify-content: center; }
+      .main-shop .box-container .box {
+        flex: 1 1 45vh;
+        margin: 2vh;
+        position: relative;
+        border: 1 solid #de90ff;
+        background-color: #de90ff;
+        overflow: hidden; }
+        .main-shop .box-container .box .image {
+          padding: 2vh;
+          background: #de90ff;
+          text-align: center; }
+          .main-shop .box-container .box .image .horizontal {
+            margin: 0 auto;
+            height: 30vh;
+            width: 45vh;
+            object-fit: cover; }
+          .main-shop .box-container .box .image .vertical {
+            margin: 0 auto;
+            height: 45vh;
+            width: 30vh;
+            object-fit: cover; }
+        .main-shop .box-container .box .info, .main-shop .box-container .box .info .title {
+          padding: 1vh;
+          color: #ffffff;
+          text-align: center;
+          font-size: medium; }
+          .main-shop .box-container .box .info .subInfo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5vh 1vh; }
   table {
     width: 30vw; } }
