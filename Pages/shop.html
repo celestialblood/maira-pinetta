@@ -21,9 +21,10 @@
     <!--Linkf iconos-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
-    <!--LINK a BOOTSTRAP-----Se pone ANTES de mi CSS Para que no me lo pise --> 
+    <!--LINK a BOOTSTRAP e iconos bootstrap -----Se pone ANTES de mi CSS Para que no me lo pise --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+   
     <!--llamo css-->
     <link rel="stylesheet" href="../css/main.css">
  
@@ -117,16 +118,100 @@
             </tbody>
         </table>
 
-        <!--Galeria sin bootstrap-->
-        <div class="prints">
-            <img class="horizontal" src="../Assets/Pinetta_Maira__DSC_0396 .jpg" alt="Print_shop" >
-            <img class="horizontal" src="../Assets/Print.jpg" alt="Print_shop" >
-            <img class="vertical" src="../Assets/Pinetta_Maira_6974.jpg">
-            <img class= "vertical" src="../Assets/MairaPinetta_Balam5.jpg" alt="">       
+        <!--Galeria desktop-->
+        <div class="box-container">
+
+            <div class="box">
+           
+                <div class="Image">
+                    <img class="horizontal" src="../Assets/Pinetta_Maira__DSC_0396 .jpg" alt="Print_shop">
+                </div>
+                
+                <div class="info"> 
+                    <h3 class="title">Flower</h3>    
+                    <div class="subInfo">
+                        <div class="price"> $1000/- <span>$1500 </span><i class="bi bi-flower2"></i>
+                        </div>                        
+                    </div>
+                </div> 
+            </div>
+
+            <div class="overlay">
+                <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+                <a href="#" style="--i:2;" class="fas fa-heart"></a>
+                <a href="#" style="--i:4;" class="fas fa-search"></a>
+
+            </div>
+
+            <div class="box">
+           
+                <div class="Image">
+                    <img class="horizontal" src="../Assets/Print.jpg" alt="Print_shop">
+                </div>
+                
+                <div class="info"> 
+                    <h3 class="title">Sensitive</h3>    
+                    <div class="subInfo">
+                        <div class="price"> $1000/- <span>$1500 </span><i class="bi bi-flower2"></i>
+                        </div>                        
+                    </div>
+                </div> 
+            </div>
+
+            <div class="overlay">
+                <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+                <a href="#" style="--i:2;" class="fas fa-heart"></a>
+                <a href="#" style="--i:4;" class="fas fa-search"></a>
+            </div>
+
+            <div class="box">
+           
+                <div class="Image">
+                    <img class="vertical" src="../Assets/Pinetta_Maira_6974.jpg">
+                </div>
+                
+                <div class="info"> 
+                    <h3 class="title">Baby</h3>    
+                    <div class="subInfo">
+                        <div class="price"> $1000/- <span>$1500 </span><i class="bi bi-flower2"></i>
+                        </div>                        
+                    </div>
+                </div> 
+            </div>
+
+            <div class="overlay">
+                <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+                <a href="#" style="--i:2;" class="fas fa-heart"></a>
+                <a href="#" style="--i:4;" class="fas fa-search"></a>
+            </div>
+
+            
+            <div class="box">
+           
+                <div class="Image">
+                    <img class= "vertical" src="../Assets/MairaPinetta_Balam5.jpg" alt="">
+                </div>
+                
+                <div class="info"> 
+                    <h3 class="title">Soft</h3>    
+                    <div class="subInfo">
+                        <div class="price"> $1000/- <span>$1500 </span><i class="bi bi-flower2"></i>
+                        </div>                        
+                    </div>
+                </div> 
+            </div>
+
+            <div class="overlay">
+                <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+                <a href="#" style="--i:2;" class="fas fa-heart"></a>
+                <a href="#" style="--i:4;" class="fas fa-search"></a>
+            </div>
+
+         
         </div>
 
 
-       <!--Gallery carrousel BOOTSTRAP -->
+       <!--Gallery carrousel BOOTSTRAP  MOBILE-->
        <div id="carouselExampleCaptions" class="carousel slide carousel-shop" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -195,7 +280,6 @@
 
     <!--link a JS de BOOTSTRAP------Se pone en la ultima parte para que se ejecute después de cargar la página por Optimización-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
