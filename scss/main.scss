@@ -452,9 +452,7 @@ h2{
 
     }
 
-    .container-fluid{
-        display:none;
-    } 
+
           
 
     /*imagenes botones */
@@ -520,6 +518,9 @@ h2{
    
     }
     
+    .container-fluid{ //activo home con bootstrap
+        display:contents;
+    } 
 
     .social-media{
        
@@ -635,18 +636,22 @@ h2{
 
             .box{
                 flex: 1 1 45vh; // repasar flex
-                margin: 2vh;
+                margin: 2vh ;
                 position: relative;
-                border: 1 solid #de90ff;
-                background-color:  #de90ff;
-                
                 overflow: hidden;
-
+                max-width: 50vh;
+                background-color: #db98ff;
+                
                 .image{
-                    padding: 2vh;
-                    background: #de90ff;
+                    padding-top: 3vh;
+                    padding-bottom: 1vh;
+                    padding-left:2vh ;
+                    padding-right: 2vh;
+                    background: #db98ff;
                     text-align: center;
-                    
+                    display: flex;
+                    justify-content: center;
+
                     .horizontal{
                         margin: 0 auto;
                         height: 30vh;
@@ -656,35 +661,63 @@ h2{
 
                     .vertical{
                         margin: 0 auto;
-                        height: 45vh;
-                        width: 30vh;
+                        height: 50vh;
+                        width: 35vh;
                         object-fit: cover;
                     }
 
                 }
 
                 .info{
-                    padding: 1vh;
-                    color: #ffffff;
+                    @include tipografia( $colorfont, $font);
                     text-align: center;
-                    font-size: medium;
-                    
+                    font-size: large;
+                    text-transform: uppercase;
+            
                     .title{
-                        @extend .info
+                        @extend .info;
+                  
                     }
 
                     .subInfo{
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        padding: 1.5vh 1vh;
+                        padding-left: 3vh;
+                        padding-bottom: 2vh;
+                        padding-top:0vh;
 
                         .price{
-
+                            font-size: large;
+                            @include tipografia( $colorfont, $font);
+                           
+                            i{
+                                padding-left: 1vh;
+                            }
                         }
                     }
-
                     
+                }
+
+                .overlay{
+                    position: absolute;
+                    top: 0; 
+                    left: 0;
+                    height: 45vh;
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    
+                    a{
+                        font-size: larger;
+                    }
+                    a:hover{
+                        color: #de90ff;
+                        transition: 0.7s;
+                        font-size:4vh;
+                    }
                 }
 
             } //box

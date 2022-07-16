@@ -384,8 +384,6 @@ h2 {
     width: 100vw; }
   .botones_home {
     display: content; }
-  .container-fluid {
-    display: none; }
   /*imagenes botones */
   #about {
     margin-top: 20%; }
@@ -420,6 +418,8 @@ h2 {
     margin-bottom: 1%;
     height: 100vh;
     max-width: 100%; }
+  .container-fluid {
+    display: contents; }
   .social-media {
     margin-top: 1vh;
     margin-bottom: 0.5vh;
@@ -492,13 +492,18 @@ h2 {
         flex: 1 1 45vh;
         margin: 2vh;
         position: relative;
-        border: 1 solid #de90ff;
-        background-color: #de90ff;
-        overflow: hidden; }
+        overflow: hidden;
+        max-width: 50vh;
+        background-color: #db98ff; }
         .main-shop .box-container .box .image {
-          padding: 2vh;
-          background: #de90ff;
-          text-align: center; }
+          padding-top: 3vh;
+          padding-bottom: 1vh;
+          padding-left: 2vh;
+          padding-right: 2vh;
+          background: #db98ff;
+          text-align: center;
+          display: flex;
+          justify-content: center; }
           .main-shop .box-container .box .image .horizontal {
             margin: 0 auto;
             height: 30vh;
@@ -506,18 +511,42 @@ h2 {
             object-fit: cover; }
           .main-shop .box-container .box .image .vertical {
             margin: 0 auto;
-            height: 45vh;
-            width: 30vh;
+            height: 50vh;
+            width: 35vh;
             object-fit: cover; }
         .main-shop .box-container .box .info, .main-shop .box-container .box .info .title {
-          padding: 1vh;
-          color: #ffffff;
+          font-family: "Dosis", sans-serif;
+          color: #ffff;
           text-align: center;
-          font-size: medium; }
+          font-size: large;
+          text-transform: uppercase; }
           .main-shop .box-container .box .info .subInfo {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.5vh 1vh; }
+            padding-left: 3vh;
+            padding-bottom: 2vh;
+            padding-top: 0vh; }
+            .main-shop .box-container .box .info .subInfo .price {
+              font-size: large;
+              font-family: "Dosis", sans-serif;
+              color: #ffff; }
+              .main-shop .box-container .box .info .subInfo .price i {
+                padding-left: 1vh; }
+        .main-shop .box-container .box .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 45vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly; }
+          .main-shop .box-container .box .overlay a {
+            font-size: larger; }
+          .main-shop .box-container .box .overlay a:hover {
+            color: #de90ff;
+            transition: 0.7s;
+            font-size: 4vh; }
   table {
     width: 30vw; } }
