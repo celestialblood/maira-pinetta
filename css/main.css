@@ -412,7 +412,8 @@ h2 {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      margin: 10vh; }
       .main-shop .box-container .box {
         flex: 1 1 45vh;
         margin: 2vh;

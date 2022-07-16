@@ -141,6 +141,8 @@ overflow-x: hidden;}
     }
 }
 
+
+
 /*TEXTO CENTRADO*/
 .nombre_home{
     display: flex;
@@ -153,6 +155,7 @@ overflow-x: hidden;}
 
     animation: updownfadein 4s ;
 
+  
 }
 
 /*---------------------------------------------------*/
@@ -500,7 +503,7 @@ h2{
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-
+            margin: 10vh;
             .box{
                 flex: 1 1 45vh; // repasar flex
                 margin: 2vh ;
