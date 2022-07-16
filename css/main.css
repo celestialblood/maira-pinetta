@@ -122,6 +122,7 @@ body {
   /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
   display: grid;
   height: 100vh;
+  width: 100vw;
   grid-template-columns: 2fr 2fr 2fr;
   /*o  repeat(3, 2fr)*/ }
 
@@ -366,7 +367,7 @@ h2 {
 
 /*--------------------------------------------MEDIA QUERY ---------------------------------------------------*/
 /*------------------------------------------TABLET------------------------------------------------*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 450px) {
   header h1 {
     padding-bottom: 0; }
   body {
@@ -382,9 +383,9 @@ h2 {
     height: 100vh;
     width: 100vw; }
   .botones_home {
-    display: none; }
+    display: content; }
   .container-fluid {
-    display: contents; }
+    display: none; }
   /*imagenes botones */
   #about {
     margin-top: 20%; }
@@ -403,7 +404,7 @@ h2 {
 
 /*FIN TABLET*/
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 770px) {
   .icon-cart-mobile, .icon-insta-mobile {
     display: none; }
   .icon-cart, .icon-insta {

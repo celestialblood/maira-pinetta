@@ -67,6 +67,7 @@ overflow-x: hidden;}
 .botones_home{  /*SIEMPRE APLICAR GRID A LOS CONTENEDORES PADRE NO A LOS HIJOS */
     display: grid;
     height: 100vh;
+    width: 100vw;
     grid-template-columns: 2fr 2fr 2fr; /*o  repeat(3, 2fr)*/
 }
 
@@ -420,13 +421,12 @@ h2{
 
 
 /*------------------------------------------TABLET------------------------------------------------*/
-@media screen and (min-width: 700px){ 
+@media screen and (min-width: 450px){ 
     header h1{
 
         padding-bottom: 0;
 
     }
-
     
     body{
         display: flex;
@@ -448,11 +448,12 @@ h2{
     }
      
     .botones_home{ 
-        display: none;
+        display: content;
+
     }
 
     .container-fluid{
-         display:contents;
+        display:none;
     } 
           
 
@@ -492,7 +493,7 @@ h2{
 
 
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
-@media screen and (min-width: 992px){ 
+@media screen and (min-width: 770px){ 
     .icon-cart-mobile, .icon-insta-mobile{
         display:none;
     }
