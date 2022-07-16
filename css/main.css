@@ -242,6 +242,12 @@ table {
     vertical-align: center;
     padding: 2vh; }
 
+.carousel-shop {
+  margin-top: 3vh; }
+
+.box-container {
+  display: none; }
+
 /*---------------CONTACT-------------*/
 .main_contact {
   display: flex;
@@ -382,8 +388,6 @@ h2 {
     margin-top: 4%;
     height: 100vh;
     width: 100vw; }
-  .botones_home {
-    display: content; }
   /*imagenes botones */
   #about {
     margin-top: 20%; }
@@ -398,14 +402,85 @@ h2 {
     justify-content: space-evenly; }
   /*------------SHOP-----------*/
   table {
-    width: 50vw; } }
+    width: 50vw; }
+  .carousel-shop {
+    display: none; }
+  .main-shop {
+    margin: 0 auto;
+    box-sizing: border-box; }
+    .main-shop .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center; }
+      .main-shop .box-container .box {
+        flex: 1 1 45vh;
+        margin: 2vh;
+        position: relative;
+        overflow: hidden;
+        max-width: 50vh;
+        background-color: #db98ff;
+        border-radius: 3%; }
+        .main-shop .box-container .box .image {
+          padding-top: 3vh;
+          padding-bottom: 1vh;
+          padding-left: 2vh;
+          padding-right: 2vh;
+          background: #db98ff;
+          text-align: center;
+          display: flex;
+          justify-content: center; }
+          .main-shop .box-container .box .image .horizontal {
+            margin: 0 auto;
+            height: 30vh;
+            width: 45vh;
+            object-fit: cover; }
+          .main-shop .box-container .box .image .vertical {
+            margin: 0 auto;
+            height: 50vh;
+            width: 35vh;
+            object-fit: cover; }
+        .main-shop .box-container .box .info, .main-shop .box-container .box .info .title {
+          font-family: "Dosis", sans-serif;
+          color: #ffff;
+          text-align: center;
+          font-size: large;
+          text-transform: uppercase; }
+          .main-shop .box-container .box .info .subInfo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 3vh;
+            padding-bottom: 2vh;
+            padding-top: 0vh; }
+            .main-shop .box-container .box .info .subInfo .price {
+              font-size: large;
+              font-family: "Dosis", sans-serif;
+              color: #ffff; }
+              .main-shop .box-container .box .info .subInfo .price i {
+                padding-left: 1vh; }
+        .main-shop .box-container .box .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 45vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly; }
+          .main-shop .box-container .box .overlay a {
+            font-size: larger; }
+          .main-shop .box-container .box .overlay a:hover {
+            color: #de90ff;
+            transition: 0.7s;
+            font-size: 4vh; } }
 
 /*FIN TABLET*/
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/
 @media screen and (min-width: 770px) {
   .icon-cart-mobile, .icon-insta-mobile {
     display: none; }
-  .icon-cart, .icon-insta {
+  .icon-insta, .icon-cart {
     display: flex;
     justify-content: flex-end;
     font-size: 4vh; }
@@ -478,75 +553,5 @@ h2 {
     text-align: left;
     padding-left: 0; }
   /*------------SHOP-------------*/
-  .carousel-shop {
-    display: none; }
-  .main-shop {
-    margin: 0 auto;
-    box-sizing: border-box; }
-    .main-shop .box-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center; }
-      .main-shop .box-container .box {
-        flex: 1 1 45vh;
-        margin: 2vh;
-        position: relative;
-        overflow: hidden;
-        max-width: 50vh;
-        background-color: #db98ff; }
-        .main-shop .box-container .box .image {
-          padding-top: 3vh;
-          padding-bottom: 1vh;
-          padding-left: 2vh;
-          padding-right: 2vh;
-          background: #db98ff;
-          text-align: center;
-          display: flex;
-          justify-content: center; }
-          .main-shop .box-container .box .image .horizontal {
-            margin: 0 auto;
-            height: 30vh;
-            width: 45vh;
-            object-fit: cover; }
-          .main-shop .box-container .box .image .vertical {
-            margin: 0 auto;
-            height: 50vh;
-            width: 35vh;
-            object-fit: cover; }
-        .main-shop .box-container .box .info, .main-shop .box-container .box .info .title {
-          font-family: "Dosis", sans-serif;
-          color: #ffff;
-          text-align: center;
-          font-size: large;
-          text-transform: uppercase; }
-          .main-shop .box-container .box .info .subInfo {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 3vh;
-            padding-bottom: 2vh;
-            padding-top: 0vh; }
-            .main-shop .box-container .box .info .subInfo .price {
-              font-size: large;
-              font-family: "Dosis", sans-serif;
-              color: #ffff; }
-              .main-shop .box-container .box .info .subInfo .price i {
-                padding-left: 1vh; }
-        .main-shop .box-container .box .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 45vh;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly; }
-          .main-shop .box-container .box .overlay a {
-            font-size: larger; }
-          .main-shop .box-container .box .overlay a:hover {
-            color: #de90ff;
-            transition: 0.7s;
-            font-size: 4vh; }
   table {
     width: 30vw; } }

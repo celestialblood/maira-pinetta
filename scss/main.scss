@@ -238,9 +238,15 @@ table{
     }
 }
 
-// .prints{
-//     display: none;
-// }
+.carousel-shop{
+    margin-top: 3vh;
+
+}
+
+//oculto gallery product desktop tablet 
+.box-container{  
+    display: none;
+}
 
 
 /*---------------CONTACT-------------*/
@@ -446,12 +452,6 @@ h2{
         height: 100vh;
         width: 100vw;
     }
-     
-    .botones_home{ 
-        display: content;
-
-    }
-
 
           
 
@@ -486,6 +486,111 @@ h2{
     table{
         width: 50vw;
     }
+    // no mostrar carousel mobile
+    .carousel-shop{ 
+        display:none;
+    }
+
+    .main-shop {
+        margin: 0 auto;
+        box-sizing: border-box;
+        
+        .box-container{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            .box{
+                flex: 1 1 45vh; // repasar flex
+                margin: 2vh ;
+                position: relative;
+                overflow: hidden;
+                max-width: 50vh;
+                background-color: #db98ff;
+                border-radius: 3%;
+                .image{
+                    padding-top: 3vh;
+                    padding-bottom: 1vh;
+                    padding-left:2vh ;
+                    padding-right: 2vh;
+                    background: #db98ff;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+
+                    .horizontal{
+                        margin: 0 auto;
+                        height: 30vh;
+                        width: 45vh ;
+                        object-fit: cover; //ver 
+                    }
+
+                    .vertical{
+                        margin: 0 auto;
+                        height: 50vh;
+                        width: 35vh;
+                        object-fit: cover;
+                    }
+
+                }
+
+                .info{
+                    @include tipografia( $colorfont, $font);
+                    text-align: center;
+                    font-size: large;
+                    text-transform: uppercase;
+            
+                    .title{
+                        @extend .info;
+                  
+                    }
+
+                    .subInfo{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-left: 3vh;
+                        padding-bottom: 2vh;
+                        padding-top:0vh;
+
+                        .price{
+                            font-size: large;
+                            @include tipografia( $colorfont, $font);
+                           
+                            i{
+                                padding-left: 1vh;
+                            }
+                        }
+                    }
+                    
+                }
+
+                .overlay{
+                    position: absolute;
+                    top: 0; 
+                    left: 0;
+                    height: 45vh;
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    
+                    a{
+                        font-size: larger;
+                    }
+                    a:hover{
+                        color: #de90ff;
+                        transition: 0.7s;
+                        font-size:4vh;
+                    }
+                }
+
+            } //box
+        } //box-container
+    
+    }    
 
 } /*FIN TABLET*/
 
@@ -619,111 +724,6 @@ h2{
 
     /*------------SHOP-------------*/
 
-    .carousel-shop{
-        display:none;
-    }
-
-    .main-shop {
-        // display: contents;
-        margin: 0 auto;
-        box-sizing: border-box;
-        
-        .box-container{
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-
-            .box{
-                flex: 1 1 45vh; // repasar flex
-                margin: 2vh ;
-                position: relative;
-                overflow: hidden;
-                max-width: 50vh;
-                background-color: #db98ff;
-                
-                .image{
-                    padding-top: 3vh;
-                    padding-bottom: 1vh;
-                    padding-left:2vh ;
-                    padding-right: 2vh;
-                    background: #db98ff;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-
-                    .horizontal{
-                        margin: 0 auto;
-                        height: 30vh;
-                        width: 45vh ;
-                        object-fit: cover; //ver 
-                    }
-
-                    .vertical{
-                        margin: 0 auto;
-                        height: 50vh;
-                        width: 35vh;
-                        object-fit: cover;
-                    }
-
-                }
-
-                .info{
-                    @include tipografia( $colorfont, $font);
-                    text-align: center;
-                    font-size: large;
-                    text-transform: uppercase;
-            
-                    .title{
-                        @extend .info;
-                  
-                    }
-
-                    .subInfo{
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding-left: 3vh;
-                        padding-bottom: 2vh;
-                        padding-top:0vh;
-
-                        .price{
-                            font-size: large;
-                            @include tipografia( $colorfont, $font);
-                           
-                            i{
-                                padding-left: 1vh;
-                            }
-                        }
-                    }
-                    
-                }
-
-                .overlay{
-                    position: absolute;
-                    top: 0; 
-                    left: 0;
-                    height: 45vh;
-                    width: 100%;
-
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    
-                    a{
-                        font-size: larger;
-                    }
-                    a:hover{
-                        color: #de90ff;
-                        transition: 0.7s;
-                        font-size:4vh;
-                    }
-                }
-
-            } //box
-        } //box-container
-    
-    }    
    
     table{
         width: 30vw;
