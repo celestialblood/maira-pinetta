@@ -485,6 +485,8 @@ h2 {
     display: flex;
     justify-content: flex-end;
     font-size: 4vh; }
+    .icon-insta .iconhidden, .icon-cart .iconhidden {
+      display: none !important; }
   body {
     display: flex;
     flex-direction: none;

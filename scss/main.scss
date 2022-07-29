@@ -608,6 +608,10 @@ h2{
         display: flex;
         justify-content: flex-end;
         font-size: 4vh;
+
+        .iconhidden{
+            display: none !important;
+        }
     }
     
     
