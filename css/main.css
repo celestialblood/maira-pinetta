@@ -484,9 +484,37 @@ h2 {
   .icon-insta, .icon-cart {
     display: flex;
     justify-content: flex-end;
-    font-size: 4vh; }
+    font-size: 4vh;
+    position: relative; }
     .icon-insta .iconhidden, .icon-cart .iconhidden {
       display: none !important; }
+    .icon-insta .num, .icon-cart .num {
+      font-size: 2vh;
+      font-family: "Dosis", sans-serif;
+      color: #ffff;
+      background-color: #de90ff;
+      padding: 0.2vh 0.5vh 0.2vh 0.5vh;
+      margin-bottom: 4vh;
+      margin-left: 0.8vh;
+      border-radius: 2.0vh;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .icon-insta .whole-cart-window .cart-wrapper, .icon-cart .whole-cart-window .cart-wrapper {
+      font-family: "Dosis", sans-serif;
+      color: #ffff;
+      overflow-y: auto;
+      max-height: 350px; }
+    .icon-insta .whole-cart-window .total, .icon-cart .whole-cart-window .total {
+      font-family: "Dosis", sans-serif;
+      color: #ffff;
+      font-size: small;
+      text-align: right;
+      padding: 5%; }
+    .icon-insta .whole-cart-window .checkout, .icon-cart .whole-cart-window .checkout {
+      width: 95%;
+      text-align: center;
+      cursor: pointer; }
   body {
     display: flex;
     flex-direction: none;

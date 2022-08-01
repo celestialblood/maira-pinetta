@@ -1,10 +1,10 @@
-$(document).ready(function() { //documento listo corre por todo el codigo antes
+$(document).ready (function() { //documento listo corre por todo el codigo antes
 
     var num=0; //variable contador producto
     var iconfull = document.getElementById("icon-full");
     var iconempty = document.getElementById("icon-empty");
 
-    $(".minus").click(function() { //para clase .minus funcion restar producto
+    $(".minus").click(function() { //para clase minus funcion restar producto
       num=num-1;
       $(".num").text(num);
       check(); //voy a la funcion check
@@ -17,7 +17,7 @@ $(document).ready(function() { //documento listo corre por todo el codigo antes
       console.log(num)
     });
   
-    function check() {
+    function check() { //funcion checkear cantidad de productos
       if (num < 1) { // si el numero es menor a 1 modifico la clase del icono para visualizarlo  vacio
        // $(".fa-solid").removeClass("fa-cart-arrow-down");
         iconempty.classList.remove('iconhidden');
@@ -32,6 +32,6 @@ $(document).ready(function() { //documento listo corre por todo el codigo antes
     }
     
     check(); //llamo a la funcion
-    $(".num").text(num);
+    $(".num").text(num); //el numero se transforma en texto
     
   });
