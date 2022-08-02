@@ -481,14 +481,19 @@ h2 {
 @media screen and (min-width: 770px) {
   .icon-cart-mobile, .icon-insta-mobile {
     display: none; }
-  .icon-insta, .icon-cart {
+  .icon-insta {
     display: flex;
     justify-content: flex-end;
     font-size: 4vh;
     position: relative; }
-    .icon-insta .iconhidden, .icon-cart .iconhidden {
+  .cart-box .icon-cart {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 4vh;
+    position: relative; }
+    .cart-box .icon-cart .iconhidden {
       display: none !important; }
-    .icon-insta .num, .icon-cart .num {
+    .cart-box .icon-cart .num {
       font-size: 2vh;
       font-family: "Dosis", sans-serif;
       color: #ffff;
@@ -500,21 +505,28 @@ h2 {
       display: flex;
       align-items: center;
       justify-content: center; }
-    .icon-insta .whole-cart-window .cart-wrapper, .icon-cart .whole-cart-window .cart-wrapper {
-      font-family: "Dosis", sans-serif;
-      color: #ffff;
-      overflow-y: auto;
-      max-height: 350px; }
-    .icon-insta .whole-cart-window .total, .icon-cart .whole-cart-window .total {
-      font-family: "Dosis", sans-serif;
-      color: #ffff;
-      font-size: small;
-      text-align: right;
-      padding: 5%; }
-    .icon-insta .whole-cart-window .checkout, .icon-cart .whole-cart-window .checkout {
-      width: 95%;
-      text-align: center;
-      cursor: pointer; }
+  .cart-box .whole-cart-window .cart-wrapper {
+    font-family: "Dosis", sans-serif;
+    color: #ffff;
+    overflow-y: auto;
+    max-height: 350px; }
+  .cart-box .whole-cart-window .subtotal {
+    font-family: "Dosis", sans-serif;
+    color: #ffff;
+    font-size: small;
+    text-align: right;
+    padding: 5%; }
+  .cart-box .whole-cart-window .checkout {
+    margin: 10px auto;
+    padding: 0.2vh 0.5vh 0.2vh 0.5vh;
+    width: 95%;
+    background-color: #db98ff;
+    border-radius: 2%;
+    cursor: pointer;
+    text-align: center;
+    font-size: large;
+    font-family: "Dosis", sans-serif;
+    color: #ffff; }
   body {
     display: flex;
     flex-direction: none;
