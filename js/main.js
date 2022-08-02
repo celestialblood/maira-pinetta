@@ -34,4 +34,49 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
     check(); //llamo a la funcion
     $(".num").text(num); //el numero se transforma en texto
     
+    function carrito() { //contador carrito
+      //array productos
+      let productos = [ 
+        Number(document.getElementById('A3').value),
+        Number(document.getElementById('A4').value),
+        Number(document.getElementById('A5').value),
+      ];
+     
+        // asigno al valor del input (cantidad) el valor del producto
+      let total = [ 
+        document.getElementById('A3').value * 2000,
+        document.getElementById('A4').value * 1000,
+        document.getElementById('A5').value * 500,
+      ];
+      // Declaro
+      let contarproducto = 0;
+      let totaltotal = 0;
+    
+      contarproducto = parseInt(contarproducto);
+      totaltotal = parseInt(total);
+    
+      if (isNaN(totaltotal, contarproducto)) {
+    
+        alert('Por favor ingrese números no letras.');
+    
+      }
+      
+      // voy poor cada producto y lo agrego a la lista 
+      for (let i = 0; i < productos.length; i++){
+        contarproducto += productos[i];
+      }
+      
+      // obtengo el total 
+      for (let j = 0; j < total.length; j++){
+        totaltotal += total[j];
+      }
+      
+      document.getElementById('totalProductos').innerHTML = "Productos: " + contarproducto;
+      document.getElementById('totaltotal').innerHTML = "Total: $" + totaltotal.toFixed(2);
+      
+    
+    }
+
+
+
   });
