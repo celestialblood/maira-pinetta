@@ -486,47 +486,58 @@ h2 {
     justify-content: flex-end;
     font-size: 4vh;
     position: relative; }
-  .cart-box .icon-cart {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 4vh;
-    position: relative; }
-    .cart-box .icon-cart .iconhidden {
-      display: none !important; }
-    .cart-box .icon-cart .num {
-      font-size: 2vh;
+  .cart-box {
+    width: 26% !important;
+    position: absolute;
+    left: 72%;
+    top: 25%;
+    background-color: #ffffff17;
+    border-radius: 5%; }
+    .cart-box .icon-cart {
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 4vh;
+      position: relative; }
+      .cart-box .icon-cart .iconhidden {
+        display: none !important; }
+      .cart-box .icon-cart .num {
+        font-size: 2vh;
+        font-family: "Dosis", sans-serif;
+        color: #ffff;
+        background-color: #de90ff;
+        padding: 0.2vh 0.5vh 0.2vh 0.5vh;
+        margin-bottom: 4vh;
+        margin-left: 0.8vh;
+        border-radius: 2.0vh;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+    .cart-box .whole-cart-window .cart-title {
+      font-size: 3vh;
+      text-align: center; }
+    .cart-box .whole-cart-window .cart-wrapper {
       font-family: "Dosis", sans-serif;
       color: #ffff;
-      background-color: #de90ff;
+      overflow-y: auto;
+      max-height: 350px; }
+    .cart-box .whole-cart-window .subtotal {
+      font-family: "Dosis", sans-serif;
+      color: #ffff;
+      font-size: medium;
+      text-align: right;
+      padding: 5%; }
+    .cart-box .whole-cart-window .checkout {
+      margin: 10px auto;
       padding: 0.2vh 0.5vh 0.2vh 0.5vh;
-      margin-bottom: 4vh;
-      margin-left: 0.8vh;
-      border-radius: 2.0vh;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-  .cart-box .whole-cart-window .cart-wrapper {
-    font-family: "Dosis", sans-serif;
-    color: #ffff;
-    overflow-y: auto;
-    max-height: 350px; }
-  .cart-box .whole-cart-window .subtotal {
-    font-family: "Dosis", sans-serif;
-    color: #ffff;
-    font-size: small;
-    text-align: right;
-    padding: 5%; }
-  .cart-box .whole-cart-window .checkout {
-    margin: 10px auto;
-    padding: 0.2vh 0.5vh 0.2vh 0.5vh;
-    width: 95%;
-    background-color: #db98ff;
-    border-radius: 2%;
-    cursor: pointer;
-    text-align: center;
-    font-size: large;
-    font-family: "Dosis", sans-serif;
-    color: #ffff; }
+      width: 90%;
+      background-color: #db98ff;
+      border-radius: 10%;
+      cursor: pointer;
+      text-align: center;
+      font-size: large;
+      font-family: "Dosis", sans-serif;
+      color: #ffff; }
   body {
     display: flex;
     flex-direction: none;

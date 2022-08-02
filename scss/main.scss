@@ -612,13 +612,20 @@ h2{
     }
 
     .cart-box{
+        width: 26% !important;
+        position: absolute;
+        left: 72%;
+        top: 25%;
+        background-color: #ffffff17;
+        border-radius: 5%;
 
         .icon-cart{
-          
+            text-align: right;
             display: flex;
             justify-content: flex-end;
             font-size: 4vh;
             position: relative;
+
             .iconhidden{
                 display: none !important;
             }
@@ -638,7 +645,10 @@ h2{
         }
         .whole-cart-window{
 
-            
+            .cart-title{
+                font-size: 3vh;
+                text-align: center;
+            }
             .cart-wrapper{
                 @include tipografia( $colorfont, $font);
                 overflow-y: auto; //muestra scroll vertical cuando se necesita
@@ -646,7 +656,7 @@ h2{
             }
             .subtotal{
                 @include tipografia( $colorfont, $font);
-                font-size: small;
+                font-size: medium;
                 text-align: right;
                 padding: 5%;
             }
@@ -654,10 +664,10 @@ h2{
             .checkout{
                 margin: 10px auto;
                 padding: 0.2vh 0.5vh 0.2vh 0.5vh;
-                width: 95%;
+                width: 90%;
 
                 background-color:#db98ff;
-                border-radius: 2%;
+                border-radius: 10%;
                 cursor:pointer;
                 text-align: center;
                 font-size: large;
