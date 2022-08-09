@@ -1,6 +1,17 @@
 $(document).ready (function() { //documento listo corre por todo el codigo antes
 
-  const products =[ //ARRAY OF PRODUCTS
+  //seteo storage del carrito lo guardamos en cart //esto va siempre al principio
+  // ?? significa que si esto es null o undefined  se va a guardar esto-> [] seteo en 0, si no puedo hacerlo con un if
+  const cart= JSON.parse(localStorage.getItem('cart')) ?? []; 
+  //el reduce cuenta los elementos y ir acumulando los valores y los suma
+  const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+    
+  document.getElementById("cart-total").innerHTML =`${cart.length}`; // modifico su numero por cartlenght (cantidad productos del carro + el storage)
+  document.getElementById("subtotal").innerHTML = `${subtotal}`; //Modifico el subtotal
+  
+  
+  //ARRAY OF PRODUCTS
+  const products =[
 
     {class:"horizontal", id:"hidden-place", title:"Hidden place - A4", price:1000, img:"../Assets/Pinetta_Maira__DSC_0396.jpg"},
     {class:"horizontal", id:"iridiscent-dreams", title:"Iridiscent dreams - A3", price:1500, img:"../Assets/20x30_Collage.jpg"},
@@ -39,6 +50,23 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
   var iconfull = document.getElementById("icon-full");
   var iconempty = document.getElementById("icon-empty");
   
+
+ //FUNCION AGREGO PRODUCTOS AL CARRITO Y SUMO EL  LOCAL STORAGE y sumo el SUBTOTAL
+  products.forEach((product) => {  
+    const idButton = `add-cart${product.id}`; //cuando hago click ne el boton se agrega a carrito la cantidad 
+    document.getElementById(idButton).addEventListener('click', () =>{
+      cart.push(product); //llevo el producto al carro   
+      localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
+      //el reduce cuenta los elementos y ir acumulando los valores y los suma
+      const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+
+      //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
+      document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
+      document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+    });
+
+  });
+
   $(".minus").click(function() { //para clase minus funcion restar producto
     num=num-1;
     $(".num").text(num);
@@ -69,52 +97,14 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
   check(); //llamo a la funcion
   $(".num").text(num); //el numero se transforma en texto
 
-    // function cart() { //contador carrito
-    //   //array productos
-    //   let productos = [ 
-    //     Number(document.getElementById('hidden-place').value),
-    //     Number(document.getElementById('iridiscent-dreams').value),
-    //     Number(document.getElementById('refugio').value),
-    //     Number(document.getElementById('soft').value),
-    //     Number(document.getElementById('home').value),
-    //     Number(document.getElementById('anhelo').value),
+  const cartIcon = document.querySelector('.icon-cart') //selecciono icono del nav 
+  const wholeCartWindow = document.querySelector('.whole-cart-window');  //selecciono ventana carrito
+  
+  cartIcon.addEventListener('click', () => { //si hay un click sobre el icon-cart disparo esta función
 
-    //   ];
-     
-    //     // asigno al valor del input (cantidad) el valor del producto
-    //   let total = [ 
-    //     document.getElementById('hidden-place, home, anhelo').value * 1000,
-    //     document.getElementById('iridiscent-dreams, refugio, soft').value * 1500,
-    //   ];
-    //   // Declaro
-    //   let contarproducto = 0;
-    //   let totaltotal = 0;
-    
-    //   contarproducto = parseInt(contarproducto);
-    //   totaltotal = parseInt(total);
-    
-    //   if (isNaN(totaltotal, contarproducto)) {
-    
-    //     alert('Por favor ingrese números no letras.');
-    
-    //   }
-      
-    //   // voy poor cada producto y lo agrego a la lista 
-    //   for (let i = 0; i < productos.length; i++){
-    //     contarproducto += productos[i];
-    //   }
-      
-    //   // obtengo el total 
-    //   for (let j = 0; j < total.length; j++){
-    //     totaltotal += total[j];
-    //   }
-      
-    //   document.getElementById('totalProductos').innerHTML = "Productos: " + contarproducto;
-    //   document.getElementById('totaltotal').innerHTML = "Total: $" + totaltotal.toFixed(2);
-      
-    
-    // }
+    wholeCartWindow.classList.toggle('hide-it'); //borra clase hide it y la muestra dependiendo el click
 
+  })
 
 
   });

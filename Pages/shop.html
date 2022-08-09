@@ -84,17 +84,27 @@
 
                         <div class="icon-cart">
                             <a href="#"><i id="icon-empty" class="fa-solid fa-cart-shopping"></i></a>   
-                            <a href="#"><i id="icon-full" class="iconhidden minus fa-solid fa-cart-arrow-down"></i></a>   
-                            <div class="num">0</div>
+                            <a href="#"><i id="icon-full" class="iconhidden fa-solid fa-cart-arrow-down"></i></a>   
+                            <div id="cart-total" class="num">0</div>
                         </div> 
 
-                        <div class="whole-cart-window">
+                        <div class="whole-cart-window hide-it">
                             <h2 class="cart-title">CART</h2>
                             <div class="cart-wrapper">
                                 <!--productos-->
-                                <div class="cart-item"></div>
+                                <div class="cart-item">
+                                    <img src="../Assets/20x30_Collage.jpg" alt="">
+                                    <div class="details">
+                                        <h4 class="item-name">Iridiscent Dreams</h4>
+                                        <p>Descripción
+                                            <span class="quantity">1</span>
+                                            <span class="price"> $0.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="cancel "><i class="fa-solid fa-xmark minus"></i></div>
+                                </div>
                             </div>
-                            <div class="subtotal">Subtotal: $0.00</div>
+                            <div id="subtotal" class="subtotal">Subtotal: $0.00</div>
                             <div class="checkout">Checkout</div>
                             <!-- <div class="view-cart">View Cart</div> -->
                         </div>
