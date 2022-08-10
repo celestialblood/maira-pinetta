@@ -9,6 +9,22 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
   document.getElementById("cart-total").innerHTML =`${cart.length}`; // modifico su numero por cartlenght (cantidad productos del carro + el storage)
   document.getElementById("subtotal").innerHTML = `${subtotal}`; //Modifico el subtotal
   
+  //llevo los items al carrito del html
+  cart.forEach((product) => {
+    document.getElementById("cartWrapper").innerHTML += `
+    <div class="cart-item">
+      <img src="${product.img}">
+      <div class="details">
+        <h4 class="item-name">${product.title}</h4>
+        <p>Descripción
+          <span class="quantity">${cart.length}</span>
+          <span class="price"> $${product.price}</span>
+        </p>
+      </div>
+      <div class="cancel "><i class="fa-solid fa-xmark minus"></i></div>
+  </div>`
+  });
+  
   
   //ARRAY OF PRODUCTS
   const products =[
@@ -66,6 +82,8 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
     });
 
   });
+
+
 
   $(".minus").click(function() { //para clase minus funcion restar producto
     num=num-1;

@@ -492,14 +492,14 @@ h2 {
     left: 73%;
     top: 16%;
     border-radius: 5%;
-    background-color: #de90ff7f; }
+    /* background-color: #de90ff7f;*/ }
     .cart-box .icon-cart {
       text-align: right;
       display: flex;
       justify-content: flex-end;
       font-size: 4vh;
       position: relative;
-      border: solid 1px #db98ff; }
+      /*border: solid 1px #db98ff;*/ }
       .cart-box .icon-cart .iconhidden {
         display: none !important; }
       .cart-box .icon-cart .num {
