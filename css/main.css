@@ -241,6 +241,15 @@ table {
     border: 1px solid #ffffff;
     vertical-align: center;
     padding: 2vh; }
+    table td .buttonProduct {
+      font-size: 2vh;
+      font-family: "Dosis", sans-serif;
+      color: #ffff;
+      background-color: #db98ff;
+      border: #db98ff;
+      padding: 0.2vh 0.5vh 0.2vh 0.5vh;
+      border-radius: 2.0vh;
+      text-align: center; }
 
 .carousel-shop {
   margin-top: 3vh; }

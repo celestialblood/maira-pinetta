@@ -238,6 +238,19 @@ table{
         border: 1px solid #ffffff;
         vertical-align: center;
         padding: 2vh;
+
+        .buttonProduct{
+            font-size: 2vh;
+            @include tipografia( $colorfont, $font);
+            background-color: #db98ff;
+            border: #db98ff;
+            padding: 0.2vh 0.5vh 0.2vh 0.5vh;
+            border-radius:2.0vh;
+            text-align: center;
+
+        }
+            
+        
     }
 }
 
