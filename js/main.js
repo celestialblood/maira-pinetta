@@ -21,7 +21,7 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
           <span class="price"> $${product.price}</span>
         </p>
       </div>
-      <div class="cancel "><i class="fa-solid fa-xmark minus"></i></div>
+      <div class="cancel "><i id="removeItem" class="fa-solid fa-xmark minus"></i></div>
   </div>`
   });
   
@@ -80,6 +80,19 @@ $(document).ready (function() { //documento listo corre por todo el codigo antes
       document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
       document .getElementById("subtotal").innerHTML = `${subtotal}`; 
     });
+
+    //FUNCION ELIMINO PRODUCTOS DEL CARRITO 
+    // const removeItem = `add-cart${product.id}`;
+    // document.getElementById(removeItem).addEventListener('click', () =>{
+    //   cart.push(product); //llevo el producto al carro   
+    //   localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
+    //   //el reduce cuenta los elementos y ir acumulando los valores y los suma
+    //   const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+
+    //   //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
+    //   document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
+    //   document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+    // });
 
   });
 
