@@ -93,107 +93,104 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
 
   </div>`;
 
+  })
 
+  // agrego un event listener para cada add-cart
+  products.forEach((product) =>{
+    idButton= `add-cart-${product.id}`;
+    document.getElementById(idButton).addEventListener('click', () =>{
 
-})
-
-// agrego un event listener para cada add-cart
-products.forEach((product) =>{
-  idButton= `add-cart-${product.id}`;
-  document.getElementById(idButton).addEventListener('click', () =>{
-
-    cart.push(product); //llevo el producto al carro   
-    localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
-    //el reduce cuenta los elementos y ir acumulando los valores y los suma
-    const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
-
-    //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
-    document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
-    document .getElementById("subtotal").innerHTML = `${subtotal}`; 
-    console.log(cart.length)
-  });
-
-
-})
-
-/// CARRITO
-let num=cart.length; //variable contador producto
-
-const cartIcon = document.querySelector('.icon-cart') //selecciono icono del nav 
-const wholeCartWindow = document.querySelector('.whole-cart-window');  //selecciono ventana carrito
-
-//muestro y oculto carrito 
-cartIcon.addEventListener('click', () => { //si hay un click sobre el icon-cart disparo esta función
-
-rendercart(cart);
-check();
-wholeCartWindow.classList.toggle('hide-it'); //borra clase hide it y la muestra dependiendo el click
-}
-
-);
-
-
-
-let iconfull = document.getElementById("icon-full");
-let iconempty = document.getElementById("icon-empty");    
-
-//Funciones
-//modifica icono del carrito si esta vacio o con productos
-function check() { //funcion checkear cantidad de productos
-
-  if (num < 1) { // si el numero es menor a 1 modifico la clase del icono para visualizarlo  vacio
-   // $(".fa-solid").removeClass("fa-cart-arrow-down");
-    iconempty.classList.remove('iconhidden');
-    iconfull.classList.add('iconhidden');
-
-  } else if (num > 0 ) { //si el numero es mayor a 0 modifico la clase del icono para visualizarlo lleno
-    iconfull.classList.remove('iconhidden');
-    iconempty.classList.add('iconhidden');
-   // $(".fa-solid").removeClass("fa-cart-shopping");
-   // $(".fa-solid").addClass("fa-cart-arrow-down");
-  }
-}
-// rendereo carrito y agregacion de listeners para el borrado 
-function rendercart(cart) {
-
-  document.getElementById("cartWrapper").innerHTML = ''
-
-  cart.forEach((product,index) => {
-    removeidButton= `remove-cart-${index}-${product.id}`
-    document.getElementById("cartWrapper").innerHTML += `
-    <div class="cart-item">
-      <img src="${product.img}">
-      <div class="details">
-
-        <h4 class="item-name">${product.title}</h4>
-        <p>Descripción
-
-          <span class="price"> $${product.price}</span>
-        </p>
-      </div>
-      <div class="cancel "><i id=${removeidButton} class="fa-solid fa-xmark minus"></i></div>
-    </div>`;
-
-
-
-  });
-
-  cart.forEach((product,index) => {
-    removeidButton= `remove-cart-${index}-${product.id}`;
-    document.getElementById(removeidButton).addEventListener('click', () =>{
-      cart.splice(index, 1)
-      rendercart(cart)
-      localStorage.setItem('cart', JSON.stringify(cart)); 
+      cart.push(product); //llevo el producto al carro   
+      localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
+      //el reduce cuenta los elementos y ir acumulando los valores y los suma
       const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+
       //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
       document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
       document .getElementById("subtotal").innerHTML = `${subtotal}`; 
-    })
+      console.log(cart.length)
+    });
+
+
   })
 
+  /// CARRITO
+  let num=cart.length; //variable contador producto
+
+  const cartIcon = document.querySelector('.icon-cart') //selecciono icono del nav 
+  const wholeCartWindow = document.querySelector('.whole-cart-window');  //selecciono ventana carrito
+
+  //muestro y oculto carrito 
+  cartIcon.addEventListener('click', () => { //si hay un click sobre el icon-cart disparo esta función
+
+    rendercart(cart);
+    check();
+    wholeCartWindow.classList.toggle('hide-it'); //borra clase hide it y la muestra dependiendo el click
+  });
 
 
-}
+
+  let iconfull = document.getElementById("icon-full");
+  let iconempty = document.getElementById("icon-empty");    
+
+  //Funciones
+  //modifica icono del carrito si esta vacio o con productos
+  function check() { //funcion checkear cantidad de productos
+
+    if (num < 1) { // si el numero es menor a 1 modifico la clase del icono para visualizarlo  vacio
+    // $(".fa-solid").removeClass("fa-cart-arrow-down");
+      iconempty.classList.remove('iconhidden');
+      iconfull.classList.add('iconhidden');
+
+    } else if (num > 0 ) { //si el numero es mayor a 0 modifico la clase del icono para visualizarlo lleno
+      iconfull.classList.remove('iconhidden');
+      iconempty.classList.add('iconhidden');
+    // $(".fa-solid").removeClass("fa-cart-shopping");
+    // $(".fa-solid").addClass("fa-cart-arrow-down");
+    }
+  }
+  
+  // rendereo carrito y agregacion de listeners para el borrado 
+  function rendercart(cart) {
+
+    document.getElementById("cartWrapper").innerHTML = ''
+
+    cart.forEach((product,index) => {
+      removeidButton= `remove-cart-${index}-${product.id}`
+      document.getElementById("cartWrapper").innerHTML += `
+      <div class="cart-item">
+        <img src="${product.img}">
+        <div class="details">
+
+          <h4 class="item-name">${product.title}</h4>
+          <p>Descripción
+
+            <span class="price"> $${product.price}</span>
+          </p>
+        </div>
+        <div class="cancel "><i id=${removeidButton} class="fa-solid fa-xmark minus"></i></div>
+      </div>`;
+
+
+
+    });
+
+    cart.forEach((product,index) => {
+      removeidButton= `remove-cart-${index}-${product.id}`;
+      document.getElementById(removeidButton).addEventListener('click', () =>{
+        cart.splice(index, 1)
+        rendercart(cart)
+        localStorage.setItem('cart', JSON.stringify(cart)); 
+        const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+        //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
+        document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
+        document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+      })
+    })
+
+
+
+  }
 
 });
 
