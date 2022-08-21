@@ -1,6 +1,7 @@
 $(document).ready (function() { //funcion documento listo corre por todo el codigo antes
 
-  //seteo storage del carrito lo guardamos en cart //esto va siempre al principio
+  //ESTO SIEMPRE VA AL PRINCIPIO, variable global
+  //seteo el storage del carrito lo guardamos en cart // aca traigo si hay algo en el storage al carrito 
   // ?? significa que si esto es null o undefined  se va a guardar esto-> [] seteo en 0, si no puedo hacerlo con un if
   const cart= JSON.parse(localStorage.getItem('cart')) ?? []; 
   //el reduce cuenta los elementos y ir acumulando los valores y los suma
@@ -70,7 +71,7 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
 
   //for each producto del array productos hago las cards en el html 
   products.forEach((product) => { 
-    const idButton = `add-cart${product.id}`
+    const idButton = `add-cart${product.id}` // string y el dato de cada producto que contiene el boton de agregar al carrito
     document.getElementById("box-container-shop").innerHTML += `<div class="box">
       <div class="image">
         <img class="${product.class}" src="${product.img}">
@@ -99,6 +100,8 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
     const idButton = `add-cart${product.id}`; //cuando hago click ne el boton se agrega a carrito la cantidad 
     document.getElementById(idButton).addEventListener('click', () =>{
       cart.push(product); //llevo el producto al carro   
+      console.log (cart);
+
       localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
       //el reduce cuenta los elementos y ir acumulando los valores y los suma
       const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
@@ -106,44 +109,74 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
       //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
       document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
       document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+
+      updateCart();
     });
 
-    //FUNCION ELIMINO PRODUCTOS DEL CARRITO 
-    // const removeItem = `add-cart${product.id}`;
-    // document.getElementById(removeItem).addEventListener('click', () =>{
-    //   cart.push(product); //llevo el producto al carro   
-    //   localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
-    //   //el reduce cuenta los elementos y ir acumulando los valores y los suma
-    //   const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
-
-    //   //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
-    //   document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
-    //   document .getElementById("subtotal").innerHTML = `${subtotal}`; 
-    // });
-
   });
 
-  //llevo los items al carrito del html
-  cart.forEach((product) => {
-    document.getElementById("cartWrapper").innerHTML += `
-    <div class="cart-item">
-      <img src="${product.img}">
-      <div class="details">
-        <h4 class="item-name">${product.title}</h4>
-        <p>Descripción
-          <span class="quantity">${cart.length}</span>
-          <span class="price"> $${product.price}</span>
-        </p>
-      </div>
-      <div class="cancel "><i id="removeItem" class="fa-solid fa-xmark minus"></i></div>
-    </div>`
-  });
+
+  //FUNCION ELIMINAR DEL CARRITO
+  const removeFromCart= () =>{
+    
+    document.getElementById(removeButton).addEventListener('click', (event)=>{ console.log(event.target.getAttribute('data-id'))
+
+      let cartProductId = event.target.getAttribute('data-id')
+    
+      //busco el producto con find, la condicion es que el id sea igual al id del boton de ese producto 
+      let productFound = cart.find ((product) => product.id === cartProductId)
+      //creo el indice del producto con la info del item de arriba
+      const indice = cart.indexOf(productFound); //o findindex
+      //splice elimina y  recibe 2 parametros indice y la cantidad de elemntos a borrar
+      cart.splice(indice, 1);
+
+      updateCart();
+    
+    });
+
+  };
+
+ //FUNCION ACTUALIZAR CARRITO 
+  const updateCart= () =>{
+    //borra el nodo y actualiza el carro
+    document.getElementById("cartWrapper").innerHTML = ""
+
+    //genero los productos en el carrito
+    cart.forEach((product) => {
+        
+      document.getElementById("cartWrapper").innerHTML += `
+      <div class="cart-item">
+        <img src="${product.img}">
+        <div class="details">
+          <h4 class="item-name">${product.title}</h4>
+          <p>Descripción
+            <span class="quantity">${cart.length}</span>
+            <span class="price"> $${product.price}</span>
+          </p>
+        </div>   
+        <div class="cancel "><i  id="removeButton" data-id=“${product.id}” class="fa-solid fa-xmark minus"></i></div>
+      </div>`
+
+      removeFromCart();
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart)); //seteo el carro al storage y cambio el valor a string para llevarlo al storage de nuevo
+    const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+    
+    document.getElementById("cart-total").innerHTML =`${cart.length} - ${subtotal}`; // 
+    document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+
+  }
+
+  
+  
+   
 
   let num=0; //variable contador producto
   let iconfull = document.getElementById("icon-full");
   let iconempty = document.getElementById("icon-empty");
   
- //MODIFICO numero de productos del carrito
+ //MODIFICO numero de productos del carrito (icono)
   $(".minus").click(function() { //para clase minus funcion restar producto
     num=num-1;
     $(".num").text(num);

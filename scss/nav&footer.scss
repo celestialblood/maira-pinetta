@@ -33,7 +33,7 @@ nav{
         @include tipografia( $colorfont, $font);
         font-weight: 300;
         color: #ffffff;
-
+        z-index: 110;
         &:hover {
             color: #de90ff;
         }

@@ -20,7 +20,8 @@ nav .nav-item a, nav #navbarScrollingDropdown, nav .dropdown-item {
   font-family: "Dosis", sans-serif;
   color: #ffff;
   font-weight: 300;
-  color: #ffffff; }
+  color: #ffffff;
+  z-index: 110; }
   nav .nav-item a:hover, nav #navbarScrollingDropdown:hover, nav .dropdown-item:hover {
     color: #de90ff; }
 
