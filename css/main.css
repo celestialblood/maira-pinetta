@@ -479,12 +479,15 @@ h2 {
           display: flex;
           align-items: center;
           justify-content: space-evenly; }
-          .main-shop .box-container .box .overlay a {
-            font-size: larger; }
-          .main-shop .box-container .box .overlay a:hover {
+          .main-shop .box-container .box .overlay button {
+            color: #ffffff;
+            font-size: 3vh;
+            border: none;
+            background: transparent; }
+          .main-shop .box-container .box .overlay button:hover {
             color: #de90ff;
-            transition: 0.7s;
-            font-size: 4vh; } }
+            transition: 0.6s;
+            font-size: 5vh; } }
 
 /*FIN TABLET*/
 /*--------------------------------------------------------DESKTOP------------------------------------------------------*/

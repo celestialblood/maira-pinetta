@@ -60,9 +60,9 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
         </div>
   
         <div class="overlay">
-          <a href="#" style="--i:1;" id= ${idButton} class="add fas fa-shopping-cart"></a>
-          <a href="#" style="--i:2;" class="fas fa-heart"></a>
-          <a href="#" style="--i:4;" class="fas fa-search"></a>
+          <button href="#" style="--i:1;" id= ${idButton} class="add fas fa-shopping-cart"></button>
+          <button href="#" style="--i:2;" class="fas fa-heart"></button>
+          <button href="#" style="--i:4;" class="fas fa-search"></button>
         </div>
         
       </div>`;
@@ -86,9 +86,9 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
     </div>
 
     <div class="overlay">
-      <a href="#" style="--i:1;" id= ${idButton} class="add fas fa-shopping-cart"></a>
-      <a href="#" style="--i:2;" class="fas fa-heart"></a>
-      <a href="#" style="--i:4;" class="fas fa-search"></a>
+      <button href="#" style="--i:1;" id= ${idButton} class="add fas fa-shopping-cart"></button>
+      <button href="#" style="--i:2;" class="fas fa-heart"></button>
+      <button href="#" style="--i:4;" class="fas fa-search"></button>
     </div>
 
   </div>`;
@@ -149,7 +149,7 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
     // $(".fa-solid").addClass("fa-cart-arrow-down");
     }
   }
-  
+
   // rendereo carrito y agregacion de listeners para el borrado 
   function rendercart(cart) {
 

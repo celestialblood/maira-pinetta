@@ -143,6 +143,7 @@ overflow-x: hidden;}
 
 
 
+
 /*TEXTO CENTRADO*/
 .nombre_home{
     display: flex;
@@ -593,13 +594,16 @@ h2{
                     align-items: center;
                     justify-content: space-evenly;
                     
-                    a{
-                        font-size: larger;
+                    button{
+                        color: #ffffff;
+                        font-size: 3vh;
+                        border:none;
+                        background: transparent;
                     }
-                    a:hover{
+                    button:hover{
                         color: #de90ff;
-                        transition: 0.7s;
-                        font-size:4vh;
+                        transition: 0.6s;
+                        font-size:5vh;
                     }
                 }
 
