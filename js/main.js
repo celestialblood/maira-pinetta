@@ -122,7 +122,7 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
 
   //muestro y oculto carrito 
   cartIcon.addEventListener('click', () => { //si hay un click sobre el icon-cart disparo esta función
-
+    
     rendercart(cart);
     check();
     wholeCartWindow.classList.toggle('hide-it'); //borra clase hide it y la muestra dependiendo el click
@@ -178,13 +178,31 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
     cart.forEach((product,index) => {
       removeidButton= `remove-cart-${index}-${product.id}`;
       document.getElementById(removeidButton).addEventListener('click', () =>{
-        cart.splice(index, 1)
-        rendercart(cart)
-        localStorage.setItem('cart', JSON.stringify(cart)); 
-        const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
-        //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
-        document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
-        document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+        Swal.fire({ // sweet alert
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            cart.splice(index, 1)
+            rendercart(cart)
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            const subtotal= cart.reduce((accumulator, product) => accumulator + product.price, 0);
+            //llevo al html la cantidad de productos y el total de estos a cart-total y a subtotal
+            document.getElementById("cart-total").innerHTML =`${cart.length}`; // 
+            document .getElementById("subtotal").innerHTML = `${subtotal}`; 
+          }
+        })
+       
       })
     })
 
