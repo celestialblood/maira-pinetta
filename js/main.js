@@ -180,7 +180,7 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
       document.getElementById(removeidButton).addEventListener('click', () =>{
         Swal.fire({ // sweet alert
           title: 'Are you sure?',
-          text: "You won't be able to revert this!",
+          text: "You can add it again if you change your mind",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
@@ -190,7 +190,7 @@ $(document).ready (function() { //funcion documento listo corre por todo el codi
           if (result.isConfirmed) {
             Swal.fire(
               'Deleted!',
-              'Your file has been deleted.',
+              'The product has been deleted.',
               'success'
             )
             cart.splice(index, 1)
