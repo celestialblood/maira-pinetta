@@ -23,7 +23,9 @@
     "nodemon": "^2.0.16"
   },
   "dependencies": {
+    "react-toastify": "^9.0.8",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.4.29"
+    "sweetalert2": "^11.4.29",
+    "toastify-js": "^1.12.0"
   }
 }
